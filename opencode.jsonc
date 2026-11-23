@@ -9,7 +9,8 @@
   "default_agent": "build",
 
   // Extra files loaded into every agent's context, in addition to AGENTS.md.
-  "instructions": ["docs/requirements.md", "docs/architecture.md"],
+  // glossary.md keeps the agent from mixing up similar words of your domain.
+  "instructions": ["docs/requirements.md", "docs/architecture.md", "docs/glossary.md"],
 
   // Rules are checked from top to bottom and the LAST matching rule wins,
   // so broad rules come first and exceptions follow them.

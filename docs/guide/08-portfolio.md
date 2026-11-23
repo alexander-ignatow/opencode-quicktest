@@ -56,6 +56,7 @@ Then search the repository for "docs/guide" and show me that nothing is left. Do
 **Docs**
 - [ ] `docs/requirements.md` matches what is actually built.
 - [ ] `docs/architecture.md` lists the API endpoints and key decisions.
+- [ ] `docs/glossary.md` matches the words used in the app.
 - [ ] No secrets in the code or the git history.
 
 **Understanding**

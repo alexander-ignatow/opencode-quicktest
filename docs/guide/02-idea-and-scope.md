@@ -57,7 +57,24 @@ Write it in English, in Markdown.
 
 **Expected behavior:** a short Markdown brief. Push back if it is too big: "Cut it to 4 stories" is a perfectly good reply.
 
-## 2.4 Sample data
+## 2.4 Glossary
+
+Name the words of your domain now, while they are fresh. Free models are weak: if two words sound alike (for example *product* and *order item*), they **will** mix them up in code and UI. A glossary in a separate file prevents that — every agent reads it before every task.
+
+In the same chat:
+
+```text
+Make a glossary for this app as a Markdown table with columns:
+Term | Meaning in this app | Not to be confused with | In code (table / type name).
+Include every main entity, every role, and every pair of words that sound alike
+but mean different things. Keep each meaning to one sentence.
+```
+
+**Expected behavior:** a table of 8–15 terms. Check the "Not to be confused with" column: if it is mostly empty, ask "which of these terms could a developer mix up?".
+
+Save it in `docs/glossary.md` (replace the guidance in that file).
+
+## 2.5 Sample data
 
 An empty app is impossible to click through, demo or test, and a UI designed on empty data breaks on real data (long names, many relations). Sample data is also the best test of your idea: if you cannot write down 10–20 realistic records, the data is not thought through yet.
 
@@ -75,9 +92,9 @@ Now give me realistic sample data for this app as one JSON file.
 
 **Expected behavior:** a readable JSON file. Check that every user story can be shown with it. If something is hard to express, fix the brief first.
 
-Save it as `data/seed.json` in the repository. In Step 3 you decide how it gets into the app.
+Use the words from your glossary in it. Save it as `data/seed.json` in the repository. In Step 3 you decide how it gets into the app.
 
-## 2.5 Save the brief
+## 2.6 Save the brief
 
 1. Open `docs/requirements.md`.
 2. Paste the MVP brief into sections 1–4 (Product overview, Users, User stories, Scope).
@@ -87,8 +104,8 @@ Save it as `data/seed.json` in the repository. In Step 3 you decide how it gets 
 6. Commit:
 
 ```bash
-git add docs/requirements.md docs/features data
-git commit -m "Add project brief, next feature and sample data"
+git add docs/requirements.md docs/features docs/glossary.md data
+git commit -m "Add project brief, glossary, next feature and sample data"
 ```
 
 If your course keeps a shared list of ideas, add yours there, so everyone builds something different.
@@ -97,7 +114,8 @@ If your course keeps a shared list of ideas, add yours there, so everyone builds
 
 - [ ] `docs/requirements.md` contains your app name, problem, users, 3–6 user stories, in scope / out of scope.
 - [ ] `docs/features/<feature-name>.md` describes the next feature: stories, rough criteria, what it touches.
+- [ ] `docs/glossary.md` lists the domain terms, including words that are easy to mix up.
 - [ ] `data/seed.json` contains realistic sample data, including tricky cases.
 - [ ] The brief is committed.
 
-Next: [Step 3. Data, architecture and hosting](03-data-and-hosting.md)
+Next: [Step 3. Data, architecture and hosting](03-data-and-hosting.md) — from there on you work in OpenCode.

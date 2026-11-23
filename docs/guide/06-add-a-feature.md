@@ -15,13 +15,14 @@ Take the feature you planned in Step 2 (`docs/features/<feature-name>.md`), or p
 
 ## 6.2 Docs first
 
-Update the requirements **before** any code. In OpenCode (**build**):
+Update the requirements **before** any code. In OpenCode, switch to the **analyst**:
 
 ```text
 I want to add the feature described in docs/features/<feature-name>.md.
 First ask me 3–5 clarifying questions. Then update docs/requirements.md:
 add the user story, acceptance criteria (including error cases) and any new data fields,
-and move it from "Out of scope" to "In scope". Mark the feature file as "in progress". Do not write code.
+and move it from "Out of scope" to "In scope". Add new terms to docs/glossary.md.
+Mark the feature file as "in progress". Do not write code.
 ```
 
 **Expected agent behavior:** questions first, then changes only in `docs/requirements.md`. Review the diff and commit it on a new branch:

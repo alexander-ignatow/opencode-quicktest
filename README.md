@@ -10,12 +10,12 @@ Everything here is free. You do not need a paid AI subscription.
 
 Follow the steps in order. Every step ends with a concrete result you can check.
 
-Steps 2–3 are about the product and decisions: you can do them in any AI chat. **From Step 4 on, all work happens in OpenCode** inside your repository, because the agent has to read and change your files.
+Step 2 is about the product: do it in any AI chat. **From Step 3 on, work in OpenCode** inside your repository: the agent reads your requirements and planned feature, explains the trade-offs and records decisions in your files.
 
 | Step | What you do | Result |
 | --- | --- | --- |
 | [1. Setup](docs/guide/01-setup.md) | Create your repo, run the app, connect OpenCode | App runs, tests pass, the agent answers |
-| [2. Idea and scope](docs/guide/02-idea-and-scope.md) | Pick a unique idea, a small MVP and the next feature (any AI chat) | Brief, `docs/features/`, `data/seed.json` |
+| [2. Idea and scope](docs/guide/02-idea-and-scope.md) | Pick a unique idea, a small MVP and the next feature (any AI chat) | Brief, `docs/glossary.md`, `docs/features/`, `data/seed.json` |
 | [3. Data, architecture and hosting](docs/guide/03-data-and-hosting.md) | Decide storage, key decisions and hosting; connect the database | Decisions in `docs/architecture.md`, `.env` |
 | [4. Requirements](docs/guide/04-requirements.md) | Turn the brief into testable requirements with the agent | Complete `docs/requirements.md` |
 | [5. Build the MVP](docs/guide/05-build-the-mvp.md) | Plan → implement → verify, one story at a time | Working MVP, green checks, commits |
@@ -42,8 +42,8 @@ Details: [docs/development.md](docs/development.md).
 apps/web/        React 19 + Vite + Tailwind CSS frontend
 apps/api/        Express 5 backend (one endpoint: GET /api/version)
 e2e/             Playwright end-to-end tests
-docs/            requirements.md, architecture.md, development.md, guide/
-.opencode/       AI subagents (frontend, backend, reviewer) and commands (/plan-feature, /implement, /verify)
+docs/            requirements.md, architecture.md, glossary.md, development.md, guide/
+.opencode/       AI agents (analyst; subagents frontend, backend, reviewer) and commands (/plan-feature, /implement, /verify)
 AGENTS.md        rules for AI agents
 opencode.jsonc   OpenCode configuration and permissions
 ```

@@ -1,0 +1,14 @@
+# Render Blueprint: the deployed app (branch master) as one free web service.
+# Express serves the API and the built frontend on the port Render passes in PORT.
+services:
+  - type: web
+    name: bookcast
+    runtime: node
+    plan: free
+    branch: master
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/version
+    envVars:
+      - key: DATABASE_URL
+        sync: false # set in the Render dashboard (Neon "main" database branch)

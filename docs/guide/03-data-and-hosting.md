@@ -2,6 +2,8 @@
 
 **Goal:** decide where your data lives, which key technical decisions the MVP **and** the next feature need, and (optionally) where your app will run — *before* writing code.
 
+> **From this step on, work in OpenCode**, started from the repository root. The agent reads `docs/requirements.md` and `docs/features/`, so its advice fits *your* app — and it can explain any option you do not understand yet.
+
 The starter has no database on purpose. You choose what your app needs.
 
 ## 3.1 Why decide now
@@ -33,6 +35,30 @@ The starter runs as **one service** in production: `npm run build && npm start` 
 | Any other Node.js host | Fine if it has a free tier that runs a Node.js server. Check its current limits. |
 
 Avoid Render's free PostgreSQL for this project: it expires after 30 days.
+
+### Render in short (reference)
+
+- **Free web service:** enough for a portfolio app. It sleeps after 15 minutes without traffic and has a temporary disk — keep data in a database, not in files.
+- **What Render needs from your repo:** build command `npm ci --include=dev && npm run build`, start command `npm start`. Render passes the port in `PORT`; the server already uses it.
+- **Secrets** (`DATABASE_URL`, ...) are set in the Render dashboard, never in the repo.
+- **Optional:** describe the service in a `render.yaml` file in the repository root (a Render *Blueprint*), so the setup is versioned with your code:
+
+  ```yaml
+  services:
+    - type: web
+      name: my-app
+      runtime: node
+      plan: free
+      branch: main
+      buildCommand: npm ci --include=dev && npm run build
+      startCommand: npm start
+      healthCheckPath: /api/version
+      envVars:
+        - key: DATABASE_URL
+          sync: false   # Render asks for the value when you create the service
+  ```
+
+The deploy itself is [Step 7](07-deploy.md). Here you only decide.
 
 *Free tiers were checked in November 2026. They change — check the provider's pricing page.*
 
@@ -79,7 +105,7 @@ Decide how `data/seed.json` gets into the app:
 
 ## 3.7 Decide with the agent
 
-In OpenCode, switch to the **plan** agent (`Shift+Tab`) and ask. You can also discuss this in your AI chat from Step 2 — then paste the agreed decisions into the second prompt below.
+In OpenCode, switch to the **plan** agent (`Shift+Tab`) and ask. Not sure what an option means? Ask the agent to explain it in simple words before you decide.
 
 ```text
 Read docs/requirements.md and the planned feature in docs/features/.
@@ -93,7 +119,7 @@ Recommend one option and explain why. Do not change any files.
 
 **Expected agent behavior:** it reads the requirements and the feature file, compares the options against your entities and stories, recommends one, lists consequences (new dependency, `.env`, migrations or schema), and names the decisions the feature depends on — without suggesting to build the feature now. It does not edit files — the plan agent cannot.
 
-Then switch back to **build** and record the decision:
+Then switch to **analyst** (it can edit only documentation) and record the decisions:
 
 ```text
 Add decision log entries to docs/architecture.md: storage = [your choice], hosting = [your choice or "not decided"],

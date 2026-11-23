@@ -94,6 +94,7 @@ Good to know:
 | --- | --- |
 | `build` agent | Default. Reads and edits files, runs commands. |
 | `plan` agent | Read-only. Thinks and plans, never edits. Switch with `Shift+Tab` (or `/agents`). |
+| `analyst` agent | Ours. Writes requirements, glossary and feature files. Can edit only `docs/` and `data/`, never code. Asks questions before writing. |
 | `frontend`, `backend` subagents | Specialists the main agent can delegate to. Can edit files. |
 | `reviewer` subagent | Reviews changes. Cannot edit anything. |
 | `/plan-feature` | Plans a feature: API, acceptance criteria, steps. No code changes. |
