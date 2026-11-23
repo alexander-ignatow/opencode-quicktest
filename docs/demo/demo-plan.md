@@ -2,7 +2,25 @@
 
 Presenter notes for the "AI-first full-stack development" webinar. Not part of the student guide.
 
-## 0. Explain the assignment
+## 0. Show the project structure — the template is a recommendation
+
+Open the repository tree and walk through it top-down:
+
+- `apps/web`, `apps/api`, `e2e/` — working React + Express app with tests, no product features.
+- `docs/` — `requirements.md`, `architecture.md`, `glossary.md`, `features/`, `development.md`, `guide/` (and `demo/` here).
+- `data/seed.json` — sample data.
+- `.opencode/` — agents (`analyst`, `frontend`, `backend`, `reviewer`) and commands (`/plan-feature`, `/implement`, `/verify`); `AGENTS.md` and `opencode.jsonc` — rules and permissions every agent gets.
+- `render.yaml`, `.env.example` — deploy scheme and the list of secrets.
+
+Messages:
+
+- **In the template, agents refer to files that do not exist yet** (`docs/features/`, `data/seed.json`, a filled `glossary.md`, `.env`). They appear step by step while you follow the guide. An empty file is a placeholder for a decision you have not made yet.
+- **The template is my recommendation, not a rule.** Example: the seed does not have to be a JSON file — it can be instructions on where to get the data, or a database dump. Requirements could live in GitHub issues instead of a Markdown file.
+- **Any file of the template can — and sometimes must — be changed for your project:** rules in `AGENTS.md`, agents and their permissions, commands, the docs structure.
+- **This repo already differs from the template, and that is normal:** the moment a project starts, it goes its own way (BookCast glossary, deploy scheme, architecture decisions).
+- **That is why there is no single "correct" template for an AI-assisted project today.** It depends on the domain, the architecture, the requirements and the team.
+
+## 1. Explain the assignment
 
 Open the template README and walk through the guide. Message: every step ends with a concrete, checkable result, and each result is the input for the next step.
 
@@ -35,11 +53,11 @@ Open the template README and walk through the guide. Message: every step ends wi
    - Result: portfolio-ready public repository.
    - Demo: tell, homework.
 
-## 1. Prerequisites
+## 2. Prerequisites
 
 ### Starting point
 
-The demo starts from tag `start` on `master`, where guide Steps 1–3 are **already done**. I do not repeat them live: I show their results (section 2) and tell how a student gets there. The live part is code generation — Steps 4–6.
+The demo starts from tag `start` on `master`, where guide Steps 1–3 are **already done**. I do not repeat them live: I show their results (section 3) and tell how a student gets there. The live part is code generation — Steps 4–6.
 
 ### Repositories
 
@@ -87,10 +105,10 @@ The demo starts from tag `start` on `master`, where guide Steps 1–3 are **alre
 - [ ] OpenCode started from the repo root, provider connected, model selected, a test prompt answered.
 - [ ] Free model checked today (`/models`); a backup free model chosen in case the main one is down or rate-limited.
 - [ ] Neon dashboard open in a browser tab (and Render, if `master` is deployed — open its URL a minute before, it sleeps).
-- [ ] Fallback tags known (see section 5); fallback recording ready, if any.
+- [ ] Fallback tags known (see section 6); fallback recording ready, if any.
 - [ ] Screen: terminal + editor + browser layout, large font, notifications off, no secrets visible.
 
-## 2. Steps 1–3: what students do (done before the demo)
+## 3. Steps 1–3: what students do (done before the demo)
 
 For each step: what a student does, what it produces, and what I open on screen to show it.
 
@@ -109,7 +127,7 @@ For each step: what a student does, what it produces, and what I open on screen 
   - `docs/glossary.md` — work vs edition, credit role vs user role, editor vs curator. Free models are weak: without this file they *will* mix these up on screen. Every agent reads it before every task (`opencode.jsonc`).
   - `docs/features/my-library.md` — planned *now*, so the architecture does not block it on Day 2.
   - `data/seed.json` — books about AI: a work in many editions and translations, collections, editions without ISBN, a rich Ukrainian cast (Нейромант 2017).
-- Talking points: the three lessons from collecting data (section 0, Step 2).
+- Talking points: the three lessons from collecting data (section 1, Step 2).
 
 ### Step 3. Data, architecture and hosting (OpenCode starts here)
 
@@ -122,18 +140,31 @@ For each step: what a student does, what it produces, and what I open on screen 
   - `render.yaml` — the deploy scheme in one file: `master` is deployed, work happens in `develop` and feature branches.
 - Note: a student needs the agent here to understand the options; I skip this dialogue because I already know what I want.
 
-## 3. Day 1 script
+## 4. Day 1 script
 
 _TBD_
 
-## 4. Day 2 script
+## 5. Day 2 script
 
 _TBD_
 
-## 5. Checkpoints
+## 6. Checkpoints
 
 _TBD — tags on `develop` with what each one shows._
 
-## 6. Run log
+## 7. Run log
 
 _Timings and problems from rehearsals. Feeds the scripts above and fixes to the guide._
+
+## 8. Key messages (for slides / cheat sheet)
+
+- Every step ends with a concrete, checkable result, and that result is the input for the next step.
+- Product first, code later: idea, scope, next feature, glossary and sample data come before any code.
+- Plan the next feature together with the MVP: the architecture must not block it, but do not build it in advance (example: users with a *set* of roles).
+- Sample data is the best test of the data model: if you cannot write 10–20 realistic records, the model is not ready.
+- Collecting real data teaches things no brainstorm does: ISBN is not an identity, duplicates of people are a real problem, the cast needs non-standard roles.
+- Free models are weak at similar words: a glossary in a separate file, read by every agent, prevents mixing up concepts.
+- Give an agent a role **and** permissions: the analyst can edit only docs, so it cannot drift into code.
+- Small steps + a check after every step: plan → implement → verify → understand → commit.
+- Never trust "all tests passed" without seeing the output.
+- The template is a starting point. Change it for your project — there is no single right AI-assisted setup.
