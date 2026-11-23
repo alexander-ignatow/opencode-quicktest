@@ -10,7 +10,8 @@ A full-stack TypeScript starter. It contains working infrastructure but no produ
 apps/web/   React 19 + Vite + Tailwind CSS 4 frontend (Vitest + React Testing Library)
 apps/api/   Express 5 API on Node.js, a single file: src/server.ts (Vitest + Supertest)
 e2e/        Playwright end-to-end tests (playwright.config.ts at the root)
-docs/       requirements.md (what to build), architecture.md (decisions), development.md (how to run)
+docs/       requirements.md (what to build), architecture.md (decisions), development.md (how to run),
+            features/ (planned features: do not implement unless asked)
 .opencode/  OpenCode subagents (frontend, backend, reviewer) and commands (/plan-feature, /implement, /verify)
 ```
 
@@ -20,7 +21,7 @@ docs/       requirements.md (what to build), architecture.md (decisions), develo
 ## Before implementing a feature
 
 1. Read `docs/requirements.md`. Implement only what it asks for. If it is empty or unclear, ask instead of guessing.
-2. Read `docs/architecture.md` and follow the decisions recorded there.
+2. Read `docs/architecture.md` and follow the decisions recorded there. Files in `docs/features/` describe planned features: keep the design compatible with them, but do not build them until asked.
 3. Read the code you are about to change.
 4. For anything larger than a small fix, propose a short plan first (or use `/plan-feature`).
 

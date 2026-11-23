@@ -1,6 +1,6 @@
-# Step 3. Data and hosting
+# Step 3. Data, architecture and hosting
 
-**Goal:** decide where your data lives and (optionally) where your app will run, *before* writing code.
+**Goal:** decide where your data lives, which key technical decisions the MVP **and** the next feature need, and (optionally) where your app will run — *before* writing code.
 
 The starter has no database on purpose. You choose what your app needs.
 
@@ -45,36 +45,63 @@ A cloud database gives you a **connection string** with a password inside. Treat
 - **Never paste it into the AI chat.** OpenCode asks for permission before reading `.env` — say no unless you have a reason.
 - Commit a `.env.example` with the variable names and fake values, so others know what to set.
 
-## 3.5 Decide with the agent
+## 3.5 Connect a Neon database
+
+Skip this if you chose in-memory storage. For MongoDB Atlas the idea is the same: create a free cluster, copy the connection string, put it into `.env`.
+
+1. Sign up at [neon.com](https://neon.com) (GitHub login works). No credit card needed.
+2. **Create project:** any name, the region closest to you.
+3. Click **Connect** and copy the connection string. It looks like `postgresql://user:password@host/dbname?sslmode=require`.
+4. In the repository root create a file `.env`:
+
+   ```bash
+   DATABASE_URL=postgresql://user:password@host/dbname?sslmode=require
+   ```
+
+5. Create `.env.example` with the same name and a fake value:
+
+   ```bash
+   DATABASE_URL=postgresql://user:password@host/dbname?sslmode=require
+   ```
+
+6. Check that git ignores `.env`: `git status` must show `.env.example`, but **not** `.env`.
+
+Tip: Neon can create **branches** of a database. Use one branch for local development and the main one for the deployed app, so experiments never touch real data.
+
+## 3.6 Decide with the agent
 
 In OpenCode, switch to the **plan** agent (`Shift+Tab`) and ask:
 
 ```text
-Read docs/requirements.md. I need to choose data storage and hosting for this app.
+Read docs/requirements.md and the planned feature in docs/features/.
+I need to choose data storage and hosting for this app.
 Options I consider: [e.g. in memory first, then Neon Postgres; Render for hosting].
 Compare them for MY requirements: what fits, what are the risks, what changes in the code.
+Also list other decisions the MVP must make now so that the planned feature does not force
+a rewrite later (for example the shape of users and roles), and which decisions can wait.
 Recommend one option and explain why. Do not change any files.
 ```
 
-**Expected agent behavior:** it reads the requirements, compares the options against your entities and stories, recommends one, and lists consequences (new dependency, `.env`, migrations or schema). It does not edit files — the plan agent cannot.
+**Expected agent behavior:** it reads the requirements and the feature file, compares the options against your entities and stories, recommends one, lists consequences (new dependency, `.env`, migrations or schema), and names the decisions the feature depends on — without suggesting to build the feature now. It does not edit files — the plan agent cannot.
 
 Then switch back to **build** and record the decision:
 
 ```text
-Add a decision log entry to docs/architecture.md: storage = [your choice], hosting = [your choice or "not decided"].
+Add decision log entries to docs/architecture.md: storage = [your choice], hosting = [your choice or "not decided"],
+plus [other decisions you agreed on, e.g. "users have a set of roles"].
 Use the template in that file: context, decision, alternatives, consequences. Do not write code.
 ```
 
-**Expected agent behavior:** one new entry under "Decision log", nothing else changed. Check with `git diff`.
+**Expected agent behavior:** new entries under "Decision log", nothing else changed. Check with `git diff`.
 
 ```bash
-git add docs/architecture.md
-git commit -m "Record storage and hosting decision"
+git add docs/architecture.md .env.example
+git commit -m "Record architecture decisions"
 ```
 
 ## ✅ Result
 
-- [ ] `docs/architecture.md` has a decision log entry for storage (and hosting, if you plan to deploy).
-- [ ] If you chose a cloud database: an account exists and you know where to find the connection string. It is **not** in git and **not** in the chat.
+- [ ] `docs/architecture.md` has decision log entries for storage, decisions the next feature depends on, and hosting (if you plan to deploy).
+- [ ] If you chose a cloud database: `.env` with `DATABASE_URL` exists locally, `.env.example` is committed, `.env` is **not** in git and **not** in the chat.
 
 Next: [Step 4. Requirements](04-requirements.md)

@@ -4,7 +4,7 @@
 
 ## 6.1 Pick the feature
 
-Take the "next feature" from Step 2, or pick another one. Substantial means it touches the frontend **and** the backend and needs real decisions, for example:
+Take the feature you planned in Step 2 (`docs/features/<feature-name>.md`), or pick another one. Substantial means it touches the frontend **and** the backend and needs real decisions, for example:
 
 - statistics or a chart based on your data,
 - search, filters and sorting,
@@ -18,10 +18,10 @@ Take the "next feature" from Step 2, or pick another one. Substantial means it t
 Update the requirements **before** any code. In OpenCode (**build**):
 
 ```text
-I want to add a feature: [describe it].
+I want to add the feature described in docs/features/<feature-name>.md.
 First ask me 3–5 clarifying questions. Then update docs/requirements.md:
 add the user story, acceptance criteria (including error cases) and any new data fields,
-and move it from "Open questions" or "Out of scope" to "In scope". Do not write code.
+and move it from "Out of scope" to "In scope". Mark the feature file as "in progress". Do not write code.
 ```
 
 **Expected agent behavior:** questions first, then changes only in `docs/requirements.md`. Review the diff and commit it on a new branch:
