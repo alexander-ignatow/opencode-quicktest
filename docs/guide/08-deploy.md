@@ -1,10 +1,10 @@
-# Step 7. Deploy (optional)
+# Step 8. Deploy (optional)
 
 **Goal:** your app is online with a public URL you can put in your CV.
 
 This step is optional, but a live demo makes a portfolio project much more convincing.
 
-## 7.1 Run the production build locally
+## 8.1 Run the production build locally
 
 The starter runs as one service in production: Express serves the API **and** the built frontend.
 
@@ -17,7 +17,7 @@ Open [http://localhost:3001](http://localhost:3001). Your app should work exactl
 
 If your app uses a cloud database, make sure the backend reads the connection string from an environment variable (for example `DATABASE_URL`) and not from the code. Fill the database of the deployed app with your seed, as decided in Step 3.
 
-## 7.2 Deploy to Render
+## 8.2 Deploy to Render
 
 1. Push your latest `main` to GitHub.
 2. Sign up at [render.com](https://render.com) with your GitHub account.
@@ -37,7 +37,7 @@ If your app uses a cloud database, make sure the backend reads the connection st
 
 You do not need to set the port: Render passes it in `PORT`, and the server uses it.
 
-## 7.3 Check it
+## 8.3 Check it
 
 - Open `https://<your-app>.onrender.com` — the app loads.
 - Open `https://<your-app>.onrender.com/api/version` — you see JSON.
@@ -45,7 +45,7 @@ You do not need to set the port: Render passes it in `PORT`, and the server uses
 
 Remember: a free service sleeps after 15 minutes without traffic. The first visit after that takes about a minute. That is normal.
 
-## 7.4 If the deploy fails
+## 8.4 If the deploy fails
 
 Copy the error lines from the Render logs and ask the agent:
 
@@ -63,4 +63,4 @@ Here are the log lines: [paste]. Find the cause and fix it. Then run npm run bui
 - [ ] Data survives a redeploy (if your app stores data).
 - [ ] No secrets in the repository.
 
-Next: [Step 8. Portfolio](08-portfolio.md)
+Next: [Step 9. Portfolio](09-portfolio.md)

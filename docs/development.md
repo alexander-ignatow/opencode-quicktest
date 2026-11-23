@@ -217,4 +217,4 @@ Errors such as `EADDRINUSE: address already in use :::3001` or `Port 5173 is alr
 
 ### The agent wrote broken or incomplete code
 
-This is normal. Run the checks, give the agent the **exact** error, make the step smaller, undo with `/undo` or `git restore .`, start a fresh session with `/new`, or try another model. More tips: [docs/guide/05-build-the-mvp.md](guide/05-build-the-mvp.md#54-when-the-agent-gets-stuck).
+This is normal. Run the checks, give the agent the **exact** error, make the step smaller, undo with `/undo` or `git restore .`, start a fresh session with `/new`, or try another model. More tips: [docs/guide/06-build-the-mvp.md](guide/06-build-the-mvp.md#64-when-the-agent-gets-stuck).
