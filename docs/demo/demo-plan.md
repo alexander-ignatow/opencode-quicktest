@@ -12,6 +12,10 @@ Open the template README and walk through the guide. Message: every step ends wi
 2. **Idea and scope** — in any AI chat: pick a unique idea, cut an MVP, plan the next feature, write sample data.
    - Result: brief in `docs/requirements.md`, `docs/features/<name>.md`, `data/seed.json`.
    - Demo: done before, tell about BookCast.
+   - What collecting the sample data taught us (a good story for this step):
+     1. ISBN is not a silver bullet: it exists only since about 1970, so older and historical editions (19th century and earlier) have none. ISBN cannot be the identity of an edition.
+     2. Author uniqueness is an open question: how do we avoid duplicates ("A. C. Clarke" vs "Arthur C. Clarke", transliterations)?
+     3. The cast needs non-standard roles (scientific editor, typeface designer, ...). In practice the whole cast became optional — only the author is required.
 3. **Data, architecture and hosting** — choose storage, seeding, the decisions the next feature depends on, hosting; connect the database.
    - Result: decision log in `docs/architecture.md`, `.env` + `.env.example`.
    - Demo: done before, tell about the stack and the deploy scheme.
