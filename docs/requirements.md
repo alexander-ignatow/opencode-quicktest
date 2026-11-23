@@ -62,6 +62,7 @@ A user can have several roles. More roles are planned (see `docs/features/my-lib
 - Cover image upload.
 - Search, filters, pagination.
 - Merging duplicate people or works.
+- Server-side rendering for SEO. Public catalog pages will need it later, not in the MVP.
 
 ## 5. Acceptance criteria
 
@@ -86,3 +87,4 @@ Where the data is stored is an architecture decision: see docs/architecture.md.
 - Which fields are required? From the seed: a person needs only a name; a work needs title, year, language and at least one author; an edition needs title, year and language (ISBN and publisher can be empty).
 - Works are referenced by title in the seed. What if two works have the same title?
 - Should the cover fallback (no ISBN or no cover found) be a placeholder image?
+- Images (low priority): where do we store author photos and our own covers if we stop relying on links — file storage or a hosting service? Do we want a gallery (several photos per person or edition) later?
