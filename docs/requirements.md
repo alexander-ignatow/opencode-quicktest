@@ -48,9 +48,11 @@ A user can have several roles. More roles are planned (see `docs/features/my-lib
 - Picking an existing work or person by name (autocomplete), or creating a new one in the same form.
 - Credits on two levels:
   - **work credits** (who wrote the work): author, co-author;
-  - **edition credits** (who made this edition): translator, illustrator, editor, compiler, cover artist.
+  - **edition credits** (who made this edition): translator, editor, foreword, introduction, afterword, illustrator, cover artist, designer.
+- Genres from a fixed dictionary; a work can have several genres.
+- Covers are not stored: the cover is shown from the ISBN (Open Library Covers API). Author photos are optional.
 - PostgreSQL database with migrations.
-- **Seed data** (`data/seed.json`): a realistic catalog, so the app is never empty. Public-domain books only, e.g. Sherlock Holmes stories and collections (one story appears in several editions) and Ukrainian classics.
+- **Seed data** (`data/seed.json`): a realistic catalog, so the app is never empty — books about artificial intelligence: 10 authors, 21 works, 29 editions in the original language, English and Ukrainian. It includes a novel in several editions and translations, collections with many works (Ted Chiang's *Exhalation*, a Stanisław Lem omnibus), editions without ISBN (before ISBN existed) and editions without credits.
 
 ### Out of scope
 
@@ -81,7 +83,6 @@ Where the data is stored is an architecture decision: see docs/architecture.md.
 
 ## 7. Open questions
 
-- Is the list of credit roles above final?
-- Which edition fields are required (ISBN? language?)
-- Person details: name only, or also years of life and a short bio?
-- Work details: original language and year of writing — required or optional?
+- Which fields are required? From the seed: a person needs only a name; a work needs title, year, language and at least one author; an edition needs title, year and language (ISBN and publisher can be empty).
+- Works are referenced by title in the seed. What if two works have the same title?
+- Should the cover fallback (no ISBN or no cover found) be a placeholder image?

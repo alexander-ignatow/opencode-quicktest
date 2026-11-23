@@ -1,430 +1,1032 @@
 {
+  "_about": "Sample data for BookCast: books about artificial intelligence. Covers are not stored: the app builds the cover URL from the ISBN (Open Library Covers API). photoUrl is filled in by hand.",
+  "genres": [
+    {
+      "key": "science-fiction",
+      "name": "Science fiction"
+    },
+    {
+      "key": "hard-science-fiction",
+      "name": "Hard science fiction"
+    },
+    {
+      "key": "cyberpunk",
+      "name": "Cyberpunk"
+    },
+    {
+      "key": "space-opera",
+      "name": "Space opera"
+    },
+    {
+      "key": "dystopia",
+      "name": "Dystopia"
+    },
+    {
+      "key": "literary-fiction",
+      "name": "Literary fiction"
+    },
+    {
+      "key": "philosophical-fiction",
+      "name": "Philosophical fiction"
+    },
+    {
+      "key": "drama",
+      "name": "Drama"
+    }
+  ],
+  "creditRoles": [
+    {
+      "key": "author",
+      "level": "work",
+      "name": "Author"
+    },
+    {
+      "key": "translator",
+      "level": "edition",
+      "name": "Translator"
+    },
+    {
+      "key": "editor",
+      "level": "edition",
+      "name": "Editor"
+    },
+    {
+      "key": "foreword",
+      "level": "edition",
+      "name": "Foreword"
+    },
+    {
+      "key": "introduction",
+      "level": "edition",
+      "name": "Introduction"
+    },
+    {
+      "key": "afterword",
+      "level": "edition",
+      "name": "Afterword"
+    },
+    {
+      "key": "illustrator",
+      "level": "edition",
+      "name": "Illustrator"
+    },
+    {
+      "key": "cover-artist",
+      "level": "edition",
+      "name": "Cover artist"
+    },
+    {
+      "key": "designer",
+      "level": "edition",
+      "name": "Designer"
+    }
+  ],
   "people": [
     {
-      "name": "Arthur Conan Doyle",
-      "born": 1859,
-      "died": 1930,
-      "bio": "Scottish writer and physician, creator of Sherlock Holmes."
+      "name": "Kazuo Ishiguro",
+      "born": 1954,
+      "died": null,
+      "bio": "British novelist born in Nagasaki. Nobel Prize in Literature 2017.",
+      "photoUrl": null
     },
     {
-      "name": "Sidney Paget",
-      "born": 1860,
-      "died": 1908,
-      "bio": "English illustrator whose drawings for The Strand Magazine defined the look of Sherlock Holmes."
+      "name": "Stanisław Lem",
+      "born": 1921,
+      "died": 2006,
+      "bio": "Polish science fiction writer and philosopher, born in Lviv.",
+      "photoUrl": null
     },
     {
-      "name": "David Henry Friston",
-      "born": 1820,
-      "died": 1906,
-      "bio": "English illustrator, the first to draw Sherlock Holmes."
+      "name": "William Gibson",
+      "born": 1948,
+      "died": null,
+      "bio": "American-Canadian writer who popularised the word \"cyberspace\" and shaped cyberpunk.",
+      "photoUrl": null
     },
     {
-      "name": "Charles Altamont Doyle",
-      "born": 1832,
-      "died": 1893,
-      "bio": "Artist and illustrator, father of Arthur Conan Doyle."
+      "name": "Isaac Asimov",
+      "born": 1920,
+      "died": 1992,
+      "bio": "American writer and biochemist, author of the Three Laws of Robotics.",
+      "photoUrl": null
     },
     {
-      "name": "Charles Kerr"
+      "name": "Philip K. Dick",
+      "born": 1928,
+      "died": 1982,
+      "bio": "American writer whose novels question reality, memory and what it means to be human.",
+      "photoUrl": null
     },
     {
-      "name": "Taras Shevchenko",
-      "born": 1814,
-      "died": 1861,
-      "bio": "Ukrainian poet and artist, author of Kobzar."
+      "name": "Arthur C. Clarke",
+      "born": 1917,
+      "died": 2008,
+      "bio": "British science fiction writer and futurist; co-wrote the screenplay of 2001 with Stanley Kubrick.",
+      "photoUrl": null
     },
     {
-      "name": "Vasily Sternberg",
-      "born": 1818,
-      "died": 1845,
-      "bio": "Painter, friend of Shevchenko, author of the frontispiece of the first Kobzar."
+      "name": "Ted Chiang",
+      "born": 1967,
+      "died": null,
+      "bio": "American writer of a small number of highly awarded stories; works as a technical writer.",
+      "photoUrl": null
+    },
+    {
+      "name": "Martha Wells",
+      "born": 1964,
+      "died": null,
+      "bio": "American writer, author of The Murderbot Diaries.",
+      "photoUrl": null
+    },
+    {
+      "name": "Karel Čapek",
+      "born": 1890,
+      "died": 1938,
+      "bio": "Czech writer and playwright; his play R.U.R. brought the word \"robot\" into the world.",
+      "photoUrl": null
+    },
+    {
+      "name": "Ann Leckie",
+      "born": 1966,
+      "died": null,
+      "bio": "American writer; her debut Ancillary Justice won the Hugo, Nebula and Arthur C. Clarke awards.",
+      "photoUrl": null
+    },
+    {
+      "name": "Ганна Лелів",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Дмитро Андрухів",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Іван Сварник",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Ігор Бречак",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Анатолій Кисіль",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Софія Скирпа",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Віктор Язневич",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Joanna Kilmartin",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Steve Cox",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Ольга Любарська",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Богдан Стасюк",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Володимир Анохін",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Ілля Стронґовський",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Віктор Харик",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Тарас Бойко",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Вікторія Зенгва",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Євген Ширинос",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Олена Ващенко",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Claudia Novack-Jones",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    },
+    {
+      "name": "Ivan Klíma",
+      "born": null,
+      "died": null,
+      "bio": null,
+      "photoUrl": null
+    }
+  ],
+  "works": [
+    {
+      "title": "Klara and the Sun",
+      "originalTitle": null,
+      "year": 2021,
+      "originalLanguage": "en",
+      "authors": [
+        "Kazuo Ishiguro"
+      ],
+      "genres": [
+        "literary-fiction",
+        "science-fiction",
+        "dystopia"
+      ],
+      "synopsis": "An Artificial Friend watches the world from a shop window until she is chosen to keep a sick girl company. A quiet story about devotion and about what makes a person irreplaceable."
+    },
+    {
+      "title": "Solaris",
+      "originalTitle": null,
+      "year": 1961,
+      "originalLanguage": "pl",
+      "authors": [
+        "Stanisław Lem"
+      ],
+      "genres": [
+        "science-fiction",
+        "philosophical-fiction"
+      ],
+      "synopsis": "On a station above an ocean planet, scientists meet visitors that the planet creates from their own memories. A novel about the limits of understanding a truly alien mind."
+    },
+    {
+      "title": "Eden",
+      "originalTitle": null,
+      "year": 1959,
+      "originalLanguage": "pl",
+      "authors": [
+        "Stanisław Lem"
+      ],
+      "genres": [
+        "science-fiction"
+      ],
+      "synopsis": "A crashed crew explores a planet whose society they cannot make sense of."
+    },
+    {
+      "title": "Return from the Stars",
+      "originalTitle": "Powrót z gwiazd",
+      "year": 1961,
+      "originalLanguage": "pl",
+      "authors": [
+        "Stanisław Lem"
+      ],
+      "genres": [
+        "science-fiction",
+        "dystopia"
+      ],
+      "synopsis": "An astronaut comes back after more than a century to an Earth where people have been made incapable of violence."
+    },
+    {
+      "title": "The Invincible",
+      "originalTitle": "Niezwyciężony",
+      "year": 1964,
+      "originalLanguage": "pl",
+      "authors": [
+        "Stanisław Lem"
+      ],
+      "genres": [
+        "science-fiction",
+        "hard-science-fiction"
+      ],
+      "synopsis": "A ship's crew faces swarms of tiny machines that evolved on their own into a collective, non-human force."
+    },
+    {
+      "title": "Neuromancer",
+      "originalTitle": null,
+      "year": 1984,
+      "originalLanguage": "en",
+      "authors": [
+        "William Gibson"
+      ],
+      "genres": [
+        "science-fiction",
+        "cyberpunk"
+      ],
+      "synopsis": "A burned-out hacker is hired for one last job and ends up working for an artificial intelligence that wants to break its own limits."
+    },
+    {
+      "title": "I, Robot",
+      "originalTitle": null,
+      "year": 1950,
+      "originalLanguage": "en",
+      "authors": [
+        "Isaac Asimov"
+      ],
+      "genres": [
+        "science-fiction"
+      ],
+      "synopsis": "Linked stories, told by robopsychologist Susan Calvin, about robots bound by the Three Laws and the paradoxes those laws create."
+    },
+    {
+      "title": "Do Androids Dream of Electric Sheep?",
+      "originalTitle": null,
+      "year": 1968,
+      "originalLanguage": "en",
+      "authors": [
+        "Philip K. Dick"
+      ],
+      "genres": [
+        "science-fiction",
+        "dystopia"
+      ],
+      "synopsis": "A bounty hunter chases escaped androids through a post-war San Francisco and starts to doubt what separates humans from machines."
+    },
+    {
+      "title": "2001: A Space Odyssey",
+      "originalTitle": null,
+      "year": 1968,
+      "originalLanguage": "en",
+      "authors": [
+        "Arthur C. Clarke"
+      ],
+      "genres": [
+        "science-fiction",
+        "hard-science-fiction"
+      ],
+      "synopsis": "Mysterious monoliths guide human evolution; on the voyage to Saturn the ship's computer HAL 9000 turns against the crew."
+    },
+    {
+      "title": "The Merchant and the Alchemist's Gate",
+      "originalTitle": null,
+      "year": 2007,
+      "originalLanguage": "en",
+      "authors": [
+        "Ted Chiang"
+      ],
+      "genres": [
+        "science-fiction"
+      ],
+      "synopsis": null
+    },
+    {
+      "title": "Exhalation",
+      "originalTitle": null,
+      "year": 2008,
+      "originalLanguage": "en",
+      "authors": [
+        "Ted Chiang"
+      ],
+      "genres": [
+        "science-fiction",
+        "philosophical-fiction"
+      ],
+      "synopsis": "A mechanical being studies its own brain and discovers that its universe is slowly running down."
+    },
+    {
+      "title": "What's Expected of Us",
+      "originalTitle": null,
+      "year": 2005,
+      "originalLanguage": "en",
+      "authors": [
+        "Ted Chiang"
+      ],
+      "genres": [
+        "science-fiction"
+      ],
+      "synopsis": null
+    },
+    {
+      "title": "The Lifecycle of Software Objects",
+      "originalTitle": null,
+      "year": 2010,
+      "originalLanguage": "en",
+      "authors": [
+        "Ted Chiang"
+      ],
+      "genres": [
+        "science-fiction"
+      ],
+      "synopsis": "Over many years, a former zookeeper raises digital creatures in a virtual world — artificial minds that have to be brought up, not programmed."
+    },
+    {
+      "title": "Dacey's Patent Automatic Nanny",
+      "originalTitle": null,
+      "year": 2011,
+      "originalLanguage": "en",
+      "authors": [
+        "Ted Chiang"
+      ],
+      "genres": [
+        "science-fiction"
+      ],
+      "synopsis": null
+    },
+    {
+      "title": "The Truth of Fact, the Truth of Feeling",
+      "originalTitle": null,
+      "year": 2013,
+      "originalLanguage": "en",
+      "authors": [
+        "Ted Chiang"
+      ],
+      "genres": [
+        "science-fiction"
+      ],
+      "synopsis": null
+    },
+    {
+      "title": "The Great Silence",
+      "originalTitle": null,
+      "year": 2015,
+      "originalLanguage": "en",
+      "authors": [
+        "Ted Chiang"
+      ],
+      "genres": [
+        "science-fiction"
+      ],
+      "synopsis": null
+    },
+    {
+      "title": "Omphalos",
+      "originalTitle": null,
+      "year": 2019,
+      "originalLanguage": "en",
+      "authors": [
+        "Ted Chiang"
+      ],
+      "genres": [
+        "science-fiction"
+      ],
+      "synopsis": null
+    },
+    {
+      "title": "Anxiety Is the Dizziness of Freedom",
+      "originalTitle": null,
+      "year": 2019,
+      "originalLanguage": "en",
+      "authors": [
+        "Ted Chiang"
+      ],
+      "genres": [
+        "science-fiction",
+        "philosophical-fiction"
+      ],
+      "synopsis": null
+    },
+    {
+      "title": "All Systems Red",
+      "originalTitle": null,
+      "year": 2017,
+      "originalLanguage": "en",
+      "authors": [
+        "Martha Wells"
+      ],
+      "genres": [
+        "science-fiction",
+        "space-opera"
+      ],
+      "synopsis": "A security android that hacked its own control module would rather watch TV series, but still has to keep a team of scientists alive."
+    },
+    {
+      "title": "R.U.R.",
+      "originalTitle": "R.U.R. (Rossumovi Univerzální Roboti)",
+      "year": 1920,
+      "originalLanguage": "cs",
+      "authors": [
+        "Karel Čapek"
+      ],
+      "genres": [
+        "drama",
+        "science-fiction",
+        "dystopia"
+      ],
+      "synopsis": "A factory mass-produces artificial workers called robots, until they rise against their makers. The play that gave the world the word \"robot\"."
+    },
+    {
+      "title": "Ancillary Justice",
+      "originalTitle": null,
+      "year": 2013,
+      "originalLanguage": "en",
+      "authors": [
+        "Ann Leckie"
+      ],
+      "genres": [
+        "science-fiction",
+        "space-opera"
+      ],
+      "synopsis": "The AI of a destroyed warship, now living in a single human body, sets out for revenge."
     }
   ],
   "editions": [
     {
-      "title": "Beeton's Christmas Annual 1887",
-      "publisher": "Ward, Lock & Co.",
-      "year": 1887,
+      "title": "Klara and the Sun",
+      "publisher": "Faber & Faber",
+      "year": 2021,
       "language": "en",
-      "isbn": null,
+      "isbn": "9780571364879",
       "works": [
-        {
-          "title": "A Study in Scarlet",
-          "year": 1887,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        }
+        "Klara and the Sun"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Klara and the Sun",
+      "publisher": "Alfred A. Knopf",
+      "year": 2021,
+      "language": "en",
+      "isbn": "9780593318171",
+      "works": [
+        "Klara and the Sun"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Клара і Сонце",
+      "publisher": "Видавництво Старого Лева",
+      "year": 2021,
+      "language": "uk",
+      "isbn": "9786176799511",
+      "works": [
+        "Klara and the Sun"
       ],
       "credits": [
         {
-          "person": "David Henry Friston",
-          "role": "illustrator"
+          "person": "Ганна Лелів",
+          "role": "translator"
         }
       ]
     },
     {
-      "title": "A Study in Scarlet",
-      "publisher": "Ward, Lock & Co.",
-      "year": 1888,
+      "title": "Solaris",
+      "publisher": "Wydawnictwo MON",
+      "year": 1961,
+      "language": "pl",
+      "isbn": null,
+      "works": [
+        "Solaris"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Solaris",
+      "publisher": "Walker and Company",
+      "year": 1970,
       "language": "en",
       "isbn": null,
       "works": [
-        {
-          "title": "A Study in Scarlet",
-          "year": 1887,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        }
+        "Solaris"
       ],
       "credits": [
         {
-          "person": "Charles Altamont Doyle",
-          "role": "illustrator"
+          "person": "Joanna Kilmartin",
+          "role": "translator"
+        },
+        {
+          "person": "Steve Cox",
+          "role": "translator"
         }
       ]
     },
     {
-      "title": "The Sign of Four",
-      "publisher": "Spencer Blackett",
-      "year": 1890,
-      "language": "en",
-      "isbn": null,
+      "title": "Соляріс",
+      "publisher": "Навчальна книга – Богдан",
+      "year": 2017,
+      "language": "uk",
+      "isbn": "9789661047616",
       "works": [
-        {
-          "title": "The Sign of the Four",
-          "year": 1890,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        }
+        "Solaris"
       ],
       "credits": [
         {
-          "person": "Charles Kerr",
-          "role": "illustrator"
+          "person": "Дмитро Андрухів",
+          "role": "translator"
         }
       ]
     },
     {
-      "title": "The Adventures of Sherlock Holmes",
-      "publisher": "George Newnes",
-      "year": 1892,
-      "language": "en",
-      "isbn": null,
+      "title": "Едем. Соляріс. Повернення із зірок. Непереможний. Том 1",
+      "publisher": "Навчальна книга – Богдан",
+      "year": 2025,
+      "language": "uk",
+      "isbn": "9789661045353",
       "works": [
-        {
-          "title": "A Scandal in Bohemia",
-          "year": 1891,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Red-Headed League",
-          "year": 1891,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "A Case of Identity",
-          "year": 1891,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Boscombe Valley Mystery",
-          "year": 1891,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Five Orange Pips",
-          "year": 1891,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Man with the Twisted Lip",
-          "year": 1891,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Adventure of the Blue Carbuncle",
-          "year": 1892,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Adventure of the Speckled Band",
-          "year": 1892,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Adventure of the Engineer's Thumb",
-          "year": 1892,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Adventure of the Noble Bachelor",
-          "year": 1892,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Adventure of the Beryl Coronet",
-          "year": 1892,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Adventure of the Copper Beeches",
-          "year": 1892,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        }
+        "Eden",
+        "Solaris",
+        "Return from the Stars",
+        "The Invincible"
       ],
       "credits": [
         {
-          "person": "Sidney Paget",
-          "role": "illustrator"
+          "person": "Дмитро Андрухів",
+          "role": "translator"
+        },
+        {
+          "person": "Іван Сварник",
+          "role": "translator"
+        },
+        {
+          "person": "Ігор Бречак",
+          "role": "translator"
+        },
+        {
+          "person": "Анатолій Кисіль",
+          "role": "translator"
+        },
+        {
+          "person": "Софія Скирпа",
+          "role": "translator"
+        },
+        {
+          "person": "Віктор Язневич",
+          "role": "afterword"
         }
       ]
     },
     {
-      "title": "The Memoirs of Sherlock Holmes",
-      "publisher": "George Newnes",
-      "year": 1894,
+      "title": "Neuromancer",
+      "publisher": "Ace Books",
+      "year": 1984,
       "language": "en",
       "isbn": null,
       "works": [
-        {
-          "title": "Silver Blaze",
-          "year": 1892,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Yellow Face",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Stock-Broker's Clerk",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The \"Gloria Scott\"",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Musgrave Ritual",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Reigate Squire",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Crooked Man",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Resident Patient",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Greek Interpreter",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Naval Treaty",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        },
-        {
-          "title": "The Final Problem",
-          "year": 1893,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        }
+        "Neuromancer"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Neuromancer",
+      "publisher": "Gollancz",
+      "year": 2016,
+      "language": "en",
+      "isbn": "9781473217386",
+      "works": [
+        "Neuromancer"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Нейромант",
+      "publisher": "Видавництво",
+      "year": 2017,
+      "language": "uk",
+      "isbn": "9789669757432",
+      "works": [
+        "Neuromancer"
       ],
       "credits": [
         {
-          "person": "Sidney Paget",
-          "role": "illustrator"
+          "person": "Ольга Любарська",
+          "role": "translator"
+        },
+        {
+          "person": "Богдан Стасюк",
+          "role": "foreword"
+        },
+        {
+          "person": "Володимир Анохін",
+          "role": "editor"
+        },
+        {
+          "person": "Ілля Стронґовський",
+          "role": "designer"
+        },
+        {
+          "person": "Віктор Харик",
+          "role": "designer"
         }
       ]
     },
     {
-      "title": "The Hound of the Baskervilles: Another Adventure of Sherlock Holmes",
-      "publisher": "George Newnes",
-      "year": 1902,
-      "language": "en",
-      "isbn": null,
+      "title": "Нейромант",
+      "publisher": "Видавництво",
+      "year": 2020,
+      "language": "uk",
+      "isbn": "9786177818075",
       "works": [
-        {
-          "title": "The Hound of the Baskervilles",
-          "year": 1902,
-          "originalLanguage": "en",
-          "authors": [
-            "Arthur Conan Doyle"
-          ]
-        }
+        "Neuromancer"
       ],
       "credits": [
         {
-          "person": "Sidney Paget",
-          "role": "illustrator"
+          "person": "Ольга Любарська",
+          "role": "translator"
         }
       ]
     },
     {
-      "title": "Кобзар",
-      "publisher": null,
-      "year": 1840,
+      "title": "I, Robot",
+      "publisher": "Gnome Press",
+      "year": 1950,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        "I, Robot"
+      ],
+      "credits": []
+    },
+    {
+      "title": "I, Robot",
+      "publisher": "Bantam Spectra",
+      "year": 1991,
+      "language": "en",
+      "isbn": "9780553294385",
+      "works": [
+        "I, Robot"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Do Androids Dream of Electric Sheep?",
+      "publisher": "Doubleday",
+      "year": 1968,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        "Do Androids Dream of Electric Sheep?"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Do Androids Dream of Electric Sheep?",
+      "publisher": "Gollancz",
+      "year": 2010,
+      "language": "en",
+      "isbn": "9780575094185",
+      "works": [
+        "Do Androids Dream of Electric Sheep?"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Чи мріють андроїди про електричних овець?",
+      "publisher": "Комубук",
+      "year": 2016,
+      "language": "uk",
+      "isbn": "9789669749062",
+      "works": [
+        "Do Androids Dream of Electric Sheep?"
+      ],
+      "credits": [
+        {
+          "person": "Тарас Бойко",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "title": "2001: A Space Odyssey",
+      "publisher": "New American Library",
+      "year": 1968,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        "2001: A Space Odyssey"
+      ],
+      "credits": []
+    },
+    {
+      "title": "2001: A Space Odyssey",
+      "publisher": "Roc",
+      "year": 2000,
+      "language": "en",
+      "isbn": "9780451457998",
+      "works": [
+        "2001: A Space Odyssey"
+      ],
+      "credits": []
+    },
+    {
+      "title": "2001: Космічна одіссея",
+      "publisher": "КСД",
+      "year": 2020,
+      "language": "uk",
+      "isbn": "9786171216587",
+      "works": [
+        "2001: A Space Odyssey"
+      ],
+      "credits": [
+        {
+          "person": "Вікторія Зенгва",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "title": "The Lifecycle of Software Objects",
+      "publisher": "Subterranean Press",
+      "year": 2010,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        "The Lifecycle of Software Objects"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Exhalation: Stories",
+      "publisher": "Alfred A. Knopf",
+      "year": 2019,
+      "language": "en",
+      "isbn": "9781101947883",
+      "works": [
+        "The Merchant and the Alchemist's Gate",
+        "Exhalation",
+        "What's Expected of Us",
+        "The Lifecycle of Software Objects",
+        "Dacey's Patent Automatic Nanny",
+        "The Truth of Fact, the Truth of Feeling",
+        "The Great Silence",
+        "Omphalos",
+        "Anxiety Is the Dizziness of Freedom"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Exhalation",
+      "publisher": "Picador",
+      "year": 2020,
+      "language": "en",
+      "isbn": "9781529014495",
+      "works": [
+        "The Merchant and the Alchemist's Gate",
+        "Exhalation",
+        "What's Expected of Us",
+        "The Lifecycle of Software Objects",
+        "Dacey's Patent Automatic Nanny",
+        "The Truth of Fact, the Truth of Feeling",
+        "The Great Silence",
+        "Omphalos",
+        "Anxiety Is the Dizziness of Freedom"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Видих",
+      "publisher": "Book Chef",
+      "year": 2026,
       "language": "uk",
       "isbn": null,
       "works": [
-        {
-          "title": "Думи мої, думи мої...",
-          "year": null,
-          "originalLanguage": "uk",
-          "authors": [
-            "Taras Shevchenko"
-          ]
-        },
-        {
-          "title": "Перебендя",
-          "year": null,
-          "originalLanguage": "uk",
-          "authors": [
-            "Taras Shevchenko"
-          ]
-        },
-        {
-          "title": "Катерина",
-          "year": null,
-          "originalLanguage": "uk",
-          "authors": [
-            "Taras Shevchenko"
-          ]
-        },
-        {
-          "title": "Тополя",
-          "year": null,
-          "originalLanguage": "uk",
-          "authors": [
-            "Taras Shevchenko"
-          ]
-        },
-        {
-          "title": "Думка",
-          "year": null,
-          "originalLanguage": "uk",
-          "authors": [
-            "Taras Shevchenko"
-          ]
-        },
-        {
-          "title": "До Основ'яненка",
-          "year": null,
-          "originalLanguage": "uk",
-          "authors": [
-            "Taras Shevchenko"
-          ]
-        },
-        {
-          "title": "Іван Підкова",
-          "year": null,
-          "originalLanguage": "uk",
-          "authors": [
-            "Taras Shevchenko"
-          ]
-        },
-        {
-          "title": "Тарасова ніч",
-          "year": null,
-          "originalLanguage": "uk",
-          "authors": [
-            "Taras Shevchenko"
-          ]
-        }
+        "The Merchant and the Alchemist's Gate",
+        "Exhalation",
+        "What's Expected of Us",
+        "The Lifecycle of Software Objects",
+        "Dacey's Patent Automatic Nanny",
+        "The Truth of Fact, the Truth of Feeling",
+        "The Great Silence",
+        "Omphalos",
+        "Anxiety Is the Dizziness of Freedom"
       ],
       "credits": [
         {
-          "person": "Vasily Sternberg",
-          "role": "illustrator"
+          "person": "Євген Ширинос",
+          "role": "translator"
         }
       ]
+    },
+    {
+      "title": "All Systems Red",
+      "publisher": "Tor.com",
+      "year": 2017,
+      "language": "en",
+      "isbn": "9780765397539",
+      "works": [
+        "All Systems Red"
+      ],
+      "credits": []
+    },
+    {
+      "title": "Щоденники вбивцебота. Всі системи: небезпека",
+      "publisher": "Жорж",
+      "year": 2023,
+      "language": "uk",
+      "isbn": "9786178023737",
+      "works": [
+        "All Systems Red"
+      ],
+      "credits": []
+    },
+    {
+      "title": "R.U.R.",
+      "publisher": "Aventinum",
+      "year": 1920,
+      "language": "cs",
+      "isbn": null,
+      "works": [
+        "R.U.R."
+      ],
+      "credits": []
+    },
+    {
+      "title": "R.U.R. (Rossum's Universal Robots)",
+      "publisher": "Penguin Classics",
+      "year": 2004,
+      "language": "en",
+      "isbn": "9780141182087",
+      "works": [
+        "R.U.R."
+      ],
+      "credits": [
+        {
+          "person": "Claudia Novack-Jones",
+          "role": "translator"
+        },
+        {
+          "person": "Ivan Klíma",
+          "role": "introduction"
+        }
+      ]
+    },
+    {
+      "title": "Р.У.Р. (Россумові універсальні роботи)",
+      "publisher": "Комора",
+      "year": 2021,
+      "language": "uk",
+      "isbn": "9786177286683",
+      "works": [
+        "R.U.R."
+      ],
+      "credits": [
+        {
+          "person": "Олена Ващенко",
+          "role": "translator"
+        }
+      ]
+    },
+    {
+      "title": "Ancillary Justice",
+      "publisher": "Orbit",
+      "year": 2013,
+      "language": "en",
+      "isbn": "9780316246620",
+      "works": [
+        "Ancillary Justice"
+      ],
+      "credits": []
     }
   ]
 }
