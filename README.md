@@ -10,6 +10,8 @@ Everything here is free. You do not need a paid AI subscription.
 
 Follow the steps in order. Every step ends with a concrete result you can check.
 
+Steps 2–3 are about the product and decisions: you can do them in any AI chat. **From Step 4 on, all work happens in OpenCode** inside your repository, because the agent has to read and change your files.
+
 | Step | What you do | Result |
 | --- | --- | --- |
 | [1. Setup](docs/guide/01-setup.md) | Create your repo, run the app, connect OpenCode | App runs, tests pass, the agent answers |

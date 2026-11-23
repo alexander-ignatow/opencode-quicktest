@@ -79,7 +79,7 @@ Decide how `data/seed.json` gets into the app:
 
 ## 3.7 Decide with the agent
 
-In OpenCode, switch to the **plan** agent (`Shift+Tab`) and ask:
+In OpenCode, switch to the **plan** agent (`Shift+Tab`) and ask. You can also discuss this in your AI chat from Step 2 — then paste the agreed decisions into the second prompt below.
 
 ```text
 Read docs/requirements.md and the planned feature in docs/features/.

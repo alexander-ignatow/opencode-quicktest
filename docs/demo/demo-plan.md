@@ -6,16 +6,30 @@ Presenter notes for the "AI-first full-stack development" webinar. Not part of t
 
 Open the template README and walk through the guide. Message: every step ends with a concrete, checkable result, and each result is the input for the next step.
 
-| Step | What happens | Result | In the demo |
-| --- | --- | --- | --- |
-| 1. Setup | Create a repo with **Use this template**, install, run the app and tests, connect OpenCode with a free model | App runs, tests pass, the agent answers the first prompt | Done before (show the result) |
-| 2. Idea and scope | In any AI chat: pick a unique idea, cut an MVP, plan the next feature, write sample data | `docs/requirements.md` (brief), `docs/features/<name>.md`, `data/seed.json` | Done before (tell about BookCast) |
-| 3. Data, architecture and hosting | Choose storage, seeding, decisions the next feature depends on, hosting; connect the database | Decision log in `docs/architecture.md`, `.env` + `.env.example` | Done before (tell about the stack and deploy scheme) |
-| 4. Requirements | The agent asks questions, then writes acceptance criteria and data; a second session reviews them as QA | Complete, testable `docs/requirements.md` | Day 1, live |
-| 5. Build the MVP | Seed first, then story by story: `/plan-feature` → `/implement` → browser → `/verify` → commit | Working MVP, green checks, e2e for the main flow | Day 1, live (one story) + homework |
-| 6. Add a feature | Docs first, then the same loop on an existing system, explicit review | Feature merged with tests and updated docs | Day 2, live |
-| 7. Deploy *(optional)* | Production build locally, then a free web service | Public URL, data survives a redeploy | Show the reference deployment |
-| 8. Portfolio | README about your app, screenshot, remove the guide, polish the repo | Portfolio-ready public repository | Tell, homework |
+1. **Setup** — create a repo with **Use this template**, install, run the app and tests, connect OpenCode with a free model.
+   - Result: the app runs, tests pass, the agent answers the first prompt.
+   - Demo: done before, show the result.
+2. **Idea and scope** — in any AI chat: pick a unique idea, cut an MVP, plan the next feature, write sample data.
+   - Result: brief in `docs/requirements.md`, `docs/features/<name>.md`, `data/seed.json`.
+   - Demo: done before, tell about BookCast.
+3. **Data, architecture and hosting** — choose storage, seeding, the decisions the next feature depends on, hosting; connect the database.
+   - Result: decision log in `docs/architecture.md`, `.env` + `.env.example`.
+   - Demo: done before, tell about the stack and the deploy scheme.
+4. **Requirements** — from here on the work happens in OpenCode. The agent asks questions, then writes acceptance criteria and data; a second session reviews them as QA.
+   - Result: complete, testable `docs/requirements.md`.
+   - Demo: Day 1, live.
+5. **Build the MVP** — seed first, then story by story: `/plan-feature` → `/implement` → browser → `/verify` → commit.
+   - Result: working MVP, green checks, e2e test for the main flow.
+   - Demo: Day 1, live (one story); the rest is homework.
+6. **Add a feature** — docs first, then the same loop on an existing system, with an explicit review.
+   - Result: feature merged with tests and updated docs.
+   - Demo: Day 2, live.
+7. **Deploy** *(optional)* — production build locally, then a free web service.
+   - Result: public URL, data survives a redeploy.
+   - Demo: show the reference deployment.
+8. **Portfolio** — README about your app, screenshot, remove the guide, polish the repo.
+   - Result: portfolio-ready public repository.
+   - Demo: tell, homework.
 
 ## 1. Prerequisites
 
