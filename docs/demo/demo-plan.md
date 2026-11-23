@@ -158,6 +158,7 @@ _Timings and problems from rehearsals. Feeds the scripts above and fixes to the 
 
 ## 8. Key messages (for slides / cheat sheet)
 
+- **Code generation is the smaller part of the work.** The main part is making the result stable, reliable and repeatable — that is what architecture, documentation, tests and agent settings are for. This is the difference between real AI-assisted development and "vibe coding".
 - Every step ends with a concrete, checkable result, and that result is the input for the next step.
 - Product first, code later: idea, scope, next feature, glossary and sample data come before any code.
 - Plan the next feature together with the MVP: the architecture must not block it, but do not build it in advance (example: users with a *set* of roles).
