@@ -32,6 +32,10 @@
     {
       "key": "drama",
       "name": "Drama"
+    },
+    {
+      "key": "fantasy",
+      "name": "Fantasy"
     }
   ],
   "creditRoles": [
@@ -150,6 +154,13 @@
       "born": 1966,
       "died": null,
       "bio": "American writer; her debut Ancillary Justice won the Hugo, Nebula and Arthur C. Clarke awards.",
+      "photoUrl": null
+    },
+    {
+      "name": "E. M. Forster",
+      "born": 1879,
+      "died": 1970,
+      "bio": "English novelist (A Passage to India, Howards End). His one science fiction story foresaw life ruled by a global machine.",
       "photoUrl": null
     },
     {
@@ -580,6 +591,33 @@
         "space-opera"
       ],
       "synopsis": "The AI of a destroyed warship, now living in a single human body, sets out for revenge."
+    },
+    {
+      "title": "The Machine Stops",
+      "originalTitle": null,
+      "year": 1909,
+      "originalLanguage": "en",
+      "authors": [
+        "E. M. Forster"
+      ],
+      "genres": [
+        "science-fiction",
+        "dystopia"
+      ],
+      "synopsis": "Humanity lives alone in underground cells, talking only through screens, with every need served by the all-powerful Machine — until it starts to fail."
+    },
+    {
+      "title": "The Celestial Omnibus",
+      "originalTitle": null,
+      "year": 1908,
+      "originalLanguage": "en",
+      "authors": [
+        "E. M. Forster"
+      ],
+      "genres": [
+        "fantasy"
+      ],
+      "synopsis": "A boy takes a trip on a mysterious omnibus that his parents insist cannot exist."
     }
   ],
   "editions": [
@@ -1025,6 +1063,29 @@
       "isbn": "9780316246620",
       "works": [
         "Ancillary Justice"
+      ],
+      "credits": []
+    },
+    {
+      "title": "The Oxford and Cambridge Review, November 1909",
+      "publisher": "Archibald Constable",
+      "year": 1909,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        "The Machine Stops"
+      ],
+      "credits": []
+    },
+    {
+      "title": "The Machine Stops",
+      "publisher": "Penguin Classics",
+      "year": 2011,
+      "language": "en",
+      "isbn": "9780141195988",
+      "works": [
+        "The Machine Stops",
+        "The Celestial Omnibus"
       ],
       "credits": []
     }

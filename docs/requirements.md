@@ -52,7 +52,7 @@ A user can have several roles. More roles are planned (see `docs/features/my-lib
 - Genres from a fixed dictionary; a work can have several genres.
 - Covers are not stored: the cover is shown from the ISBN (Open Library Covers API). Author photos are optional.
 - PostgreSQL database with migrations.
-- **Seed data** (`data/seed.json`): a realistic catalog, so the app is never empty — books about artificial intelligence: 10 authors, 21 works, 29 editions in the original language, English and Ukrainian. It includes a novel in several editions and translations, collections with many works (Ted Chiang's *Exhalation*, a Stanisław Lem omnibus), editions without ISBN (before ISBN existed) and editions without credits.
+- **Seed data** (`data/seed.json`): a realistic catalog, so the app is never empty — books about artificial intelligence: 11 authors, 23 works, 31 editions in the original language, English and Ukrainian. It includes a novel in several editions and translations, collections with many works (Ted Chiang's *Exhalation*, a Stanisław Lem omnibus), editions without ISBN (before ISBN existed) and editions without credits.
 
 ### Out of scope
 
@@ -63,6 +63,7 @@ A user can have several roles. More roles are planned (see `docs/features/my-lib
 - Search, filters, pagination.
 - Merging duplicate people or works.
 - Server-side rendering for SEO. Public catalog pages will need it later, not in the MVP.
+- Character index (later): link works to characters, e.g. "all books about Sherlock Holmes". A real wish, not for the MVP.
 
 ## 5. Acceptance criteria
 
