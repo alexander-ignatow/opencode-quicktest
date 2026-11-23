@@ -50,7 +50,7 @@ A user can have several roles. More roles are planned (see `docs/features/my-lib
   - **work credits** (who wrote the work): author, co-author;
   - **edition credits** (who made this edition): translator, illustrator, editor, compiler, cover artist.
 - PostgreSQL database with migrations.
-- **Seed data**: a realistic catalog, so the app is never empty. Public-domain books only, e.g. Sherlock Holmes stories and collections (one story appears in several editions) and Ukrainian classics.
+- **Seed data** (`data/seed.json`): a realistic catalog, so the app is never empty. Public-domain books only, e.g. Sherlock Holmes stories and collections (one story appears in several editions) and Ukrainian classics.
 
 ### Out of scope
 

@@ -1,0 +1,430 @@
+{
+  "people": [
+    {
+      "name": "Arthur Conan Doyle",
+      "born": 1859,
+      "died": 1930,
+      "bio": "Scottish writer and physician, creator of Sherlock Holmes."
+    },
+    {
+      "name": "Sidney Paget",
+      "born": 1860,
+      "died": 1908,
+      "bio": "English illustrator whose drawings for The Strand Magazine defined the look of Sherlock Holmes."
+    },
+    {
+      "name": "David Henry Friston",
+      "born": 1820,
+      "died": 1906,
+      "bio": "English illustrator, the first to draw Sherlock Holmes."
+    },
+    {
+      "name": "Charles Altamont Doyle",
+      "born": 1832,
+      "died": 1893,
+      "bio": "Artist and illustrator, father of Arthur Conan Doyle."
+    },
+    {
+      "name": "Charles Kerr"
+    },
+    {
+      "name": "Taras Shevchenko",
+      "born": 1814,
+      "died": 1861,
+      "bio": "Ukrainian poet and artist, author of Kobzar."
+    },
+    {
+      "name": "Vasily Sternberg",
+      "born": 1818,
+      "died": 1845,
+      "bio": "Painter, friend of Shevchenko, author of the frontispiece of the first Kobzar."
+    }
+  ],
+  "editions": [
+    {
+      "title": "Beeton's Christmas Annual 1887",
+      "publisher": "Ward, Lock & Co.",
+      "year": 1887,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        {
+          "title": "A Study in Scarlet",
+          "year": 1887,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        }
+      ],
+      "credits": [
+        {
+          "person": "David Henry Friston",
+          "role": "illustrator"
+        }
+      ]
+    },
+    {
+      "title": "A Study in Scarlet",
+      "publisher": "Ward, Lock & Co.",
+      "year": 1888,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        {
+          "title": "A Study in Scarlet",
+          "year": 1887,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        }
+      ],
+      "credits": [
+        {
+          "person": "Charles Altamont Doyle",
+          "role": "illustrator"
+        }
+      ]
+    },
+    {
+      "title": "The Sign of Four",
+      "publisher": "Spencer Blackett",
+      "year": 1890,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        {
+          "title": "The Sign of the Four",
+          "year": 1890,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        }
+      ],
+      "credits": [
+        {
+          "person": "Charles Kerr",
+          "role": "illustrator"
+        }
+      ]
+    },
+    {
+      "title": "The Adventures of Sherlock Holmes",
+      "publisher": "George Newnes",
+      "year": 1892,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        {
+          "title": "A Scandal in Bohemia",
+          "year": 1891,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Red-Headed League",
+          "year": 1891,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "A Case of Identity",
+          "year": 1891,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Boscombe Valley Mystery",
+          "year": 1891,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Five Orange Pips",
+          "year": 1891,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Man with the Twisted Lip",
+          "year": 1891,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Adventure of the Blue Carbuncle",
+          "year": 1892,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Adventure of the Speckled Band",
+          "year": 1892,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Adventure of the Engineer's Thumb",
+          "year": 1892,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Adventure of the Noble Bachelor",
+          "year": 1892,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Adventure of the Beryl Coronet",
+          "year": 1892,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Adventure of the Copper Beeches",
+          "year": 1892,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        }
+      ],
+      "credits": [
+        {
+          "person": "Sidney Paget",
+          "role": "illustrator"
+        }
+      ]
+    },
+    {
+      "title": "The Memoirs of Sherlock Holmes",
+      "publisher": "George Newnes",
+      "year": 1894,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        {
+          "title": "Silver Blaze",
+          "year": 1892,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Yellow Face",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Stock-Broker's Clerk",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The \"Gloria Scott\"",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Musgrave Ritual",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Reigate Squire",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Crooked Man",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Resident Patient",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Greek Interpreter",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Naval Treaty",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        },
+        {
+          "title": "The Final Problem",
+          "year": 1893,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        }
+      ],
+      "credits": [
+        {
+          "person": "Sidney Paget",
+          "role": "illustrator"
+        }
+      ]
+    },
+    {
+      "title": "The Hound of the Baskervilles: Another Adventure of Sherlock Holmes",
+      "publisher": "George Newnes",
+      "year": 1902,
+      "language": "en",
+      "isbn": null,
+      "works": [
+        {
+          "title": "The Hound of the Baskervilles",
+          "year": 1902,
+          "originalLanguage": "en",
+          "authors": [
+            "Arthur Conan Doyle"
+          ]
+        }
+      ],
+      "credits": [
+        {
+          "person": "Sidney Paget",
+          "role": "illustrator"
+        }
+      ]
+    },
+    {
+      "title": "Кобзар",
+      "publisher": null,
+      "year": 1840,
+      "language": "uk",
+      "isbn": null,
+      "works": [
+        {
+          "title": "Думи мої, думи мої...",
+          "year": null,
+          "originalLanguage": "uk",
+          "authors": [
+            "Taras Shevchenko"
+          ]
+        },
+        {
+          "title": "Перебендя",
+          "year": null,
+          "originalLanguage": "uk",
+          "authors": [
+            "Taras Shevchenko"
+          ]
+        },
+        {
+          "title": "Катерина",
+          "year": null,
+          "originalLanguage": "uk",
+          "authors": [
+            "Taras Shevchenko"
+          ]
+        },
+        {
+          "title": "Тополя",
+          "year": null,
+          "originalLanguage": "uk",
+          "authors": [
+            "Taras Shevchenko"
+          ]
+        },
+        {
+          "title": "Думка",
+          "year": null,
+          "originalLanguage": "uk",
+          "authors": [
+            "Taras Shevchenko"
+          ]
+        },
+        {
+          "title": "До Основ'яненка",
+          "year": null,
+          "originalLanguage": "uk",
+          "authors": [
+            "Taras Shevchenko"
+          ]
+        },
+        {
+          "title": "Іван Підкова",
+          "year": null,
+          "originalLanguage": "uk",
+          "authors": [
+            "Taras Shevchenko"
+          ]
+        },
+        {
+          "title": "Тарасова ніч",
+          "year": null,
+          "originalLanguage": "uk",
+          "authors": [
+            "Taras Shevchenko"
+          ]
+        }
+      ],
+      "credits": [
+        {
+          "person": "Vasily Sternberg",
+          "role": "illustrator"
+        }
+      ]
+    }
+  ]
+}
