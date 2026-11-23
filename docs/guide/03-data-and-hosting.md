@@ -68,7 +68,16 @@ Skip this if you chose in-memory storage. For MongoDB Atlas the idea is the same
 
 Tip: Neon can create **branches** of a database. Use one branch for local development and the main one for the deployed app, so experiments never touch real data.
 
-## 3.6 Decide with the agent
+## 3.6 Seed data
+
+Decide how `data/seed.json` gets into the app:
+
+- **In memory:** load the file when the server starts.
+- **Database:** a command such as `npm run db:seed` that fills the database. It must be safe to run twice (no duplicates).
+- Accounts (if your app has login) do not belong in `seed.json`: take the first account's email and password from environment variables.
+- Decide when the seed runs on the deployed app: once by hand, or on every start.
+
+## 3.7 Decide with the agent
 
 In OpenCode, switch to the **plan** agent (`Shift+Tab`) and ask:
 
@@ -88,7 +97,7 @@ Then switch back to **build** and record the decision:
 
 ```text
 Add decision log entries to docs/architecture.md: storage = [your choice], hosting = [your choice or "not decided"],
-plus [other decisions you agreed on, e.g. "users have a set of roles"].
+plus seeding = [how data/seed.json is loaded], plus [other decisions you agreed on, e.g. "users have a set of roles"].
 Use the template in that file: context, decision, alternatives, consequences. Do not write code.
 ```
 
@@ -101,7 +110,7 @@ git commit -m "Record architecture decisions"
 
 ## ✅ Result
 
-- [ ] `docs/architecture.md` has decision log entries for storage, decisions the next feature depends on, and hosting (if you plan to deploy).
+- [ ] `docs/architecture.md` has decision log entries for storage, seeding, decisions the next feature depends on, and hosting (if you plan to deploy).
 - [ ] If you chose a cloud database: `.env` with `DATABASE_URL` exists locally, `.env.example` is committed, `.env` is **not** in git and **not** in the chat.
 
 Next: [Step 4. Requirements](04-requirements.md)

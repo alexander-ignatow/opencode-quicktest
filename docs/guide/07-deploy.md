@@ -15,7 +15,7 @@ npm start
 
 Open [http://localhost:3001](http://localhost:3001). Your app should work exactly like in development. If it does not work here, it will not work on the hosting either — fix it first (ask the agent, give it the exact error).
 
-If your app uses a cloud database, make sure the backend reads the connection string from an environment variable (for example `DATABASE_URL`) and not from the code.
+If your app uses a cloud database, make sure the backend reads the connection string from an environment variable (for example `DATABASE_URL`) and not from the code. Fill the database of the deployed app with your seed, as decided in Step 3.
 
 ## 7.2 Deploy to Render
 

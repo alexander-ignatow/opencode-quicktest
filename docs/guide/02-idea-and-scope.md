@@ -57,7 +57,27 @@ Write it in English, in Markdown.
 
 **Expected behavior:** a short Markdown brief. Push back if it is too big: "Cut it to 4 stories" is a perfectly good reply.
 
-## 2.4 Save the brief
+## 2.4 Sample data
+
+An empty app is impossible to click through, demo or test, and a UI designed on empty data breaks on real data (long names, many relations). Sample data is also the best test of your idea: if you cannot write down 10–20 realistic records, the data is not thought through yet.
+
+You do not need a database structure now. You need the data itself, in a simple JSON file. In the same chat:
+
+```text
+Now give me realistic sample data for this app as one JSON file.
+- Write it the way a person would describe it: nested objects, relations by name,
+  no ids and no database tables.
+- 10–30 records in total.
+- Include tricky cases on purpose: one item linked to several others, empty optional
+  fields, a very long name.
+- Only made-up or public data. No real personal data.
+```
+
+**Expected behavior:** a readable JSON file. Check that every user story can be shown with it. If something is hard to express, fix the brief first.
+
+Save it as `data/seed.json` in the repository. In Step 3 you decide how it gets into the app.
+
+## 2.5 Save the brief
 
 1. Open `docs/requirements.md`.
 2. Paste the MVP brief into sections 1–4 (Product overview, Users, User stories, Scope).
@@ -67,8 +87,8 @@ Write it in English, in Markdown.
 6. Commit:
 
 ```bash
-git add docs/requirements.md docs/features
-git commit -m "Add project brief and next feature"
+git add docs/requirements.md docs/features data
+git commit -m "Add project brief, next feature and sample data"
 ```
 
 If your course keeps a shared list of ideas, add yours there, so everyone builds something different.
@@ -77,6 +97,7 @@ If your course keeps a shared list of ideas, add yours there, so everyone builds
 
 - [ ] `docs/requirements.md` contains your app name, problem, users, 3–6 user stories, in scope / out of scope.
 - [ ] `docs/features/<feature-name>.md` describes the next feature: stories, rough criteria, what it touches.
+- [ ] `data/seed.json` contains realistic sample data, including tricky cases.
 - [ ] The brief is committed.
 
 Next: [Step 3. Data, architecture and hosting](03-data-and-hosting.md)

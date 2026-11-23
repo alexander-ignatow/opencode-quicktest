@@ -10,7 +10,17 @@
 
 Small steps + a check after each step = a reliable result. This matters even more with free models.
 
-## 5.2 The loop
+## 5.2 Start with the seed
+
+Your first "story" is technical: load `data/seed.json` the way you decided in Step 3. Every next story then has real data to show.
+
+```text
+/plan-feature Load data/seed.json into the app as decided in docs/architecture.md (seeding).
+```
+
+Done when: after a fresh start (or `npm run db:seed`) the data is there, and running the seed twice creates no duplicates.
+
+## 5.3 The loop
 
 Repeat for every user story:
 
@@ -102,7 +112,7 @@ git switch main
 git pull
 ```
 
-## 5.3 When the agent gets stuck
+## 5.4 When the agent gets stuck
 
 1. Give it the **exact** error text: "`npm run test` fails with: ... Find the cause, explain it, fix it, run the tests again."
 2. Undo a bad change: `/undo` in OpenCode, or `git restore .` (discards all uncommitted changes in tracked files).
@@ -114,6 +124,7 @@ git pull
 
 ## ✅ Result
 
+- [ ] The seed loads `data/seed.json`; running it twice creates no duplicates.
 - [ ] All MVP user stories work in the browser, including error and empty states.
 - [ ] `npm run verify` and `npm run test:e2e` pass.
 - [ ] At least one Playwright test covers the main user flow.
