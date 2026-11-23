@@ -1,6 +1,6 @@
 # Feature: My library
 
-> **Status:** planned — after the MVP (guide Step 6). Written together with the MVP brief, so the MVP architecture does not block it. Do **not** implement it as part of the MVP.
+> **Status:** planned — after the MVP (guide Step 7). Written together with the MVP brief, so the MVP architecture does not block it. Do **not** implement it as part of the MVP.
 
 ## Idea
 

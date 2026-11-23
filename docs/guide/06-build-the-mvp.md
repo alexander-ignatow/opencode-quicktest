@@ -1,8 +1,8 @@
-# Step 5. Build the MVP
+# Step 6. Build the MVP
 
 **Goal:** a working MVP, built one user story at a time with the plan → implement → verify loop.
 
-## 5.1 Why not "generate the whole app"
+## 6.1 Why not "generate the whole app"
 
 - The model forgets and contradicts itself when the change is large.
 - One wrong idea early breaks everything built on top of it.
@@ -10,17 +10,17 @@
 
 Small steps + a check after each step = a reliable result. This matters even more with free models.
 
-## 5.2 Start with the seed
+## 6.2 Start with the seed
 
 Your first "story" is technical: load `data/seed.json` the way you decided in Step 3. Every next story then has real data to show.
 
 ```text
-/plan-feature Load data/seed.json into the app as decided in docs/architecture.md (seeding).
+/plan-feature Load data/seed.json into the app as decided in docs/architecture/ (seeding).
 ```
 
 Done when: after a fresh start (or `npm run db:seed`) the data is there, and running the seed twice creates no duplicates.
 
-## 5.3 The loop
+## 6.3 The loop
 
 Repeat for every user story:
 
@@ -40,14 +40,14 @@ Start a fresh session (`/new`) for every story — a short context works better.
 
 ```text
 /plan-feature User story 1 from docs/requirements.md: [paste the story].
-Use the storage decision from docs/architecture.md.
+Follow docs/architecture/.
 ```
 
 **Expected agent behavior:** it runs as the read-only **plan** agent, reads the docs and code, and returns: frontend vs backend work, API endpoints (method, path, request, response, errors), acceptance criteria, small numbered steps, open questions. No files change.
 
 ### 3. Review the plan
 
-Read it. Answer its open questions. Push back if something is unnecessary:
+Read it. Answer its open questions. If the plan contradicts `docs/architecture/` — a new library, another folder layout, a second way to do the same thing — stop: decide it with the **architect** first, then plan again. Push back if something is unnecessary:
 
 ```text
 Drop the separate search endpoint — filter on the frontend, there will be few items.
@@ -112,7 +112,7 @@ git switch main
 git pull
 ```
 
-## 5.4 When the agent gets stuck
+## 6.4 When the agent gets stuck
 
 1. Give it the **exact** error text: "`npm run test` fails with: ... Find the cause, explain it, fix it, run the tests again."
 2. Undo a bad change: `/undo` in OpenCode, or `git restore .` (discards all uncommitted changes in tracked files).
@@ -128,7 +128,7 @@ git pull
 - [ ] All MVP user stories work in the browser, including error and empty states.
 - [ ] `npm run verify` and `npm run test:e2e` pass.
 - [ ] At least one Playwright test covers the main user flow.
-- [ ] `docs/architecture.md` lists your API endpoints and decisions.
+- [ ] `docs/architecture/` is up to date: API endpoints, data model, new decisions.
 - [ ] Work is merged into `main` in small, meaningful commits.
 
-Next: [Step 6. Add a feature](06-add-a-feature.md)
+Next: [Step 7. Add a feature](07-add-a-feature.md)

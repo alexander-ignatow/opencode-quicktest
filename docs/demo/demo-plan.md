@@ -34,22 +34,25 @@ Open the template README and walk through the guide. Message: every step ends wi
      1. ISBN is not a silver bullet: it exists only since about 1970, so older and historical editions (19th century and earlier) have none. ISBN cannot be the identity of an edition.
      2. Author uniqueness is an open question: how do we avoid duplicates ("A. C. Clarke" vs "Arthur C. Clarke", transliterations)?
      3. The cast needs non-standard roles (scientific editor, typeface designer, ...). In practice the whole cast became optional — only the author is required.
-3. **Data, architecture and hosting** — from here on the work happens in OpenCode. Choose storage, seeding, the decisions the next feature depends on, hosting; connect the database.
+3. **Data, key decisions and hosting** — from here on the work happens in OpenCode. Choose storage, seeding, the decisions the next feature depends on, hosting; connect the database.
    - Result: decision log in `docs/architecture.md`, `.env` + `.env.example`.
    - Demo: done before, tell about the stack and the deploy scheme.
 4. **Requirements** — the **analyst** agent (can edit only `docs/` and `data/`, never code) asks questions, then writes acceptance criteria and data; a second session reviews them as QA.
    - Result: complete, testable `docs/requirements.md`.
    - Demo: Day 1, live.
-5. **Build the MVP** — seed first, then story by story: `/plan-feature` → `/implement` → browser → `/verify` → commit.
+5. **Architecture** — create an `architect` agent, turn `docs/architecture.md` into a `docs/architecture/` folder, agree on the data model, code structure and libraries; review in a fresh session.
+   - Result: `docs/architecture/` (README, data model, backend, frontend, decisions), `architect` agent.
+   - Demo: Day 1, live.
+6. **Build the MVP** — seed first, then story by story: `/plan-feature` → `/implement` → browser → `/verify` → commit.
    - Result: working MVP, green checks, e2e test for the main flow.
    - Demo: Day 1, live (one story); the rest is homework.
-6. **Add a feature** — docs first, then the same loop on an existing system, with an explicit review.
+7. **Add a feature** — docs first, then the same loop on an existing system, with an explicit review.
    - Result: feature merged with tests and updated docs.
    - Demo: Day 2, live.
-7. **Deploy** *(optional)* — production build locally, then a free web service.
+8. **Deploy** *(optional)* — production build locally, then a free web service.
    - Result: public URL, data survives a redeploy.
    - Demo: show `render.yaml` and the deploy scheme; deploying is optional.
-8. **Portfolio** — README about your app, screenshot, remove the guide, polish the repo.
+9. **Portfolio** — README about your app, screenshot, remove the guide, polish the repo.
    - Result: portfolio-ready public repository.
    - Demo: tell, homework.
 
@@ -57,7 +60,7 @@ Open the template README and walk through the guide. Message: every step ends wi
 
 ### Starting point
 
-The demo starts from tag `start` on `master`, where guide Steps 1–3 are **already done**. I do not repeat them live: I show their results (section 3) and tell how a student gets there. The live part is code generation — Steps 4–6.
+The demo starts from tag `start` on `master`, where guide Steps 1–3 are **already done**. I do not repeat them live: I show their results (section 3) and tell how a student gets there. The live part is Steps 4–7: requirements, architecture, code generation, a feature.
 
 ### Repositories
 
@@ -72,7 +75,7 @@ The demo starts from tag `start` on `master`, where guide Steps 1–3 are **alre
 | --- | --- |
 | `master` | Stable branch, deployed by Render. Right now it is the **starting point**: Steps 1–3 done. |
 | tag `start` | Marks the starting point on `master`, so it stays reachable after `master` moves on. |
-| `develop` | The prepared run of Steps 4–8, done in advance. Merged into `master` when stable (→ deploy). |
+| `develop` | The prepared run of Steps 4–9, done in advance. Merged into `master` when stable (→ deploy). |
 | `feature/<name>` | One branch per story or feature, cut from `develop` and merged back with a pull request — the same flow the guide teaches. |
 | tags `step-N-...` | Fallback checkpoints on `develop` after every step: `git switch -c live <tag>` to jump there. |
 | `demo/<day>` | Throwaway branch for the live demo, cut from `start` (Day 1) or a step tag (Day 2). Never merged. |
@@ -129,7 +132,7 @@ For each step: what a student does, what it produces, and what I open on screen 
   - `data/seed.json` — books about AI: a work in many editions and translations, collections, editions without ISBN, a rich Ukrainian cast (Нейромант 2017).
 - Talking points: the three lessons from collecting data (section 1, Step 2).
 
-### Step 3. Data, architecture and hosting (OpenCode starts here)
+### Step 3. Data, key decisions and hosting (OpenCode starts here)
 
 - Student: in OpenCode, the **plan** agent compares storage and hosting options for *their* requirements and names the decisions the next feature depends on → the **build** agent records them in `docs/architecture.md` → Neon project and `.env` → `.env.example` committed.
 - Result: decision log in `docs/architecture.md`, `.env` (local only), `.env.example`, optionally `render.yaml`.
@@ -143,6 +146,23 @@ For each step: what a student does, what it produces, and what I open on screen 
 ## 4. Day 1 script
 
 _TBD_
+
+### Step 5. Architecture (live)
+
+Why this step exists — found in rehearsal: with one `architecture.md` the architecture starts to drift **before** the first story is implemented. ORM, UI library, validation, folder layout, reuse — left open, every `/implement` invents its own.
+
+1. **build** creates the `architect` agent (guide 5.2). Show the file: same model, different role and permissions — edits only `docs/architecture/`.
+2. **build** turns `docs/architecture.md` into the folder and updates the references (guide 5.3). Show that only `README.md` and `decisions.md` are loaded into every session — the rest is read on demand (free models have small limits).
+3. **architect** designs it (guide 5.4): options first, my choice, then the files and `decisions.md` entries.
+4. **plan** reviews in a fresh session (guide 5.5), **architect** fixes.
+
+Message: an agent is a role, not a model. One weak model, three roles (analyst, architect, builder) with narrow instructions and permissions — each does less, and does it better.
+
+### Step 6. Build the MVP (live: one story)
+
+_TBD after rehearsal: which story, how many prompts, fallback tag._
+
+**Deliberate gap: visual design.** Nothing in the guide, requirements or architecture describes how the app should *look* (colors, typography, layout, visual hierarchy). The UI approach (library or none, component reuse) is architecture and is decided; the look is not. Show the students what a weak model produces without a design brief — they will see the problem immediately. Then tell them: this is the same kind of gap as the architecture one, just more visible.
 
 ## 5. Day 2 script
 
@@ -168,4 +188,8 @@ _Timings and problems from rehearsals. Feeds the scripts above and fixes to the 
 - Give an agent a role **and** permissions: the analyst can edit only docs, so it cannot drift into code.
 - Small steps + a check after every step: plan → implement → verify → understand → commit.
 - Never trust "all tests passed" without seeing the output.
+- Agree on the architecture before the first story: with one loose file it drifts before any code exists. Decide data model, structure and libraries once, write them down, let every agent read them.
+- An agent is a role, not a model: one weak model with three narrow roles (analyst, architect, builder) works better than one model with one vague prompt.
+- Whatever you do not describe, the model invents. Visual design is the most visible example: no design brief — and you get the weak model's default look.
+- Mistakes are expected, the process catches them: in rehearsal the analyst made errors in the requirements and a review in a fresh session found them.
 - The template is a starting point. Change it for your project — there is no single right AI-assisted setup.

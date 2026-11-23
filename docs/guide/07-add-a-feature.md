@@ -1,8 +1,8 @@
-# Step 6. Add a feature
+# Step 7. Add a feature
 
 **Goal:** add one substantial feature to a working app without breaking it. This is what real development looks like: most of the time you change an existing system.
 
-## 6.1 Pick the feature
+## 7.1 Pick the feature
 
 Take the feature you planned in Step 2 (`docs/features/<feature-name>.md`), or pick another one. Substantial means it touches the frontend **and** the backend and needs real decisions, for example:
 
@@ -13,7 +13,7 @@ Take the feature you planned in Step 2 (`docs/features/<feature-name>.md`), or p
 - a shareable read-only link,
 - data from a free public API.
 
-## 6.2 Docs first
+## 7.2 Docs first
 
 Update the requirements **before** any code. In OpenCode, switch to the **analyst**:
 
@@ -33,9 +33,9 @@ git add docs/requirements.md
 git commit -m "Add requirements for <feature>"
 ```
 
-## 6.3 Plan → implement → verify
+## 7.3 Plan → implement → verify
 
-Same loop as in Step 5, with extra attention to the existing code:
+Same loop as in Step 6, with extra attention to the existing code:
 
 ```text
 /plan-feature The new user story "[story]" from docs/requirements.md.
@@ -47,7 +47,7 @@ Point out risks of breaking current features.
 
 Then `/implement` (step by step), check in the browser, and `/verify`.
 
-## 6.4 Ask for an explicit review
+## 7.4 Ask for an explicit review
 
 ```text
 Use the reviewer subagent to review all changes on this branch compared to main.
@@ -56,10 +56,12 @@ Focus on: bugs, missing tests, broken existing features, mismatch with docs/requ
 
 **Expected agent behavior:** the reviewer reads the diff and returns findings ordered by severity with suggested fixes. It cannot change files. Fix what matters with the build agent, then run `/verify` again.
 
-## 6.5 Update the docs and merge
+## 7.5 Update the docs and merge
+
+Switch to the **architect**:
 
 ```text
-Check docs/architecture.md against the current code. Update the API endpoints table
+Check docs/architecture/ against the current code. Update the API endpoints and the data model
 and add decision log entries for decisions made in this feature. Do not change code.
 ```
 
@@ -69,7 +71,7 @@ Commit, push, open a pull request in your repository, merge.
 
 - [ ] The feature works in the browser; old features still work.
 - [ ] New tests cover the feature; `npm run verify` and `npm run test:e2e` pass.
-- [ ] `docs/requirements.md` and `docs/architecture.md` describe the feature.
+- [ ] `docs/requirements.md` and `docs/architecture/` describe the feature.
 - [ ] A merged pull request with the feature in your repository.
 
-Next: [Step 7. Deploy](07-deploy.md) (optional) or [Step 8. Portfolio](08-portfolio.md)
+Next: [Step 8. Deploy](08-deploy.md) (optional) or [Step 9. Portfolio](09-portfolio.md)

@@ -60,4 +60,4 @@ git commit -m "Complete MVP requirements"
 - [ ] Out of scope is filled in.
 - [ ] Committed.
 
-Next: [Step 5. Build the MVP](05-build-the-mvp.md)
+Next: [Step 5. Architecture](05-architecture.md)

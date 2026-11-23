@@ -1,4 +1,4 @@
-# Step 3. Data, architecture and hosting
+# Step 3. Data, key decisions and hosting
 
 **Goal:** decide where your data lives, which key technical decisions the MVP **and** the next feature need, and (optionally) where your app will run — *before* writing code.
 
@@ -58,7 +58,7 @@ Avoid Render's free PostgreSQL for this project: it expires after 30 days.
           sync: false   # Render asks for the value when you create the service
   ```
 
-The deploy itself is [Step 7](07-deploy.md). Here you only decide.
+The deploy itself is [Step 8](08-deploy.md). Here you only decide.
 
 *Free tiers were checked in November 2026. They change — check the provider's pricing page.*
 
