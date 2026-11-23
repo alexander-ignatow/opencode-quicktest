@@ -142,7 +142,15 @@ For each step: what a student does, what it produces, and what I open on screen 
 
 ## 4. Day 1 script
 
-_TBD_
+### Step 4. Requirements (live): three prompts
+
+1. **Analyst completes the requirements** — switch to `analyst`, prompt from guide 4.1. It asks questions first; I answer; it writes acceptance criteria, data and open questions, and updates the glossary.
+2. **QA review in a fresh session** — `/new`, switch to `plan`, prompt from guide 4.2. It lists vague or untestable criteria and contradictions.
+3. **Analyst fixes the findings** — back to `analyst`: "Fix findings N, M from the review; leave K as is." Show `git diff docs/requirements.md`.
+
+Message: the model made the mistakes, and the model found them — because the *process* has a review in a fresh session, not because the model is smart. Links to the first key message (section 8).
+
+Timing: models are slow; see the run log for real numbers.
 
 ## 5. Day 2 script
 
@@ -156,6 +164,8 @@ _TBD — tags on `develop` with what each one shows._
 
 _Timings and problems from rehearsals. Feeds the scripts above and fixes to the guide._
 
+- **2026-11-23, Step 4, DeepSeek 4.1 Flash Free.** Slow, stumbles in places. The analyst introduced errors into the requirements; the QA review by the plan agent found them; a third prompt to the analyst fixed them. The guide's two prompts work as written; the demo needs the third one. Time: _TBD_.
+
 ## 8. Key messages (for slides / cheat sheet)
 
 - **Code generation is the smaller part of the work.** The main part is making the result stable, reliable and repeatable — that is what architecture, documentation, tests and agent settings are for. This is the difference between real AI-assisted development and "vibe coding".
@@ -168,4 +178,5 @@ _Timings and problems from rehearsals. Feeds the scripts above and fixes to the 
 - Give an agent a role **and** permissions: the analyst can edit only docs, so it cannot drift into code.
 - Small steps + a check after every step: plan → implement → verify → understand → commit.
 - Never trust "all tests passed" without seeing the output.
+- Mistakes are expected, the process catches them: in rehearsal the analyst made errors in the requirements and a review in a fresh session found them.
 - The template is a starting point. Change it for your project — there is no single right AI-assisted setup.
