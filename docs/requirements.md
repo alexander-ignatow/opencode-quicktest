@@ -4,7 +4,7 @@
 
 This file describes **what** your application must do. AI agents read it before planning or implementing anything (it is loaded automatically through `opencode.jsonc`), so clear requirements lead to better code. Write it in English.
 
-Keep **how** it is built (technical decisions) in `docs/architecture.md`.
+Keep **how** it is built (technical decisions) in `docs/architecture/`.
 
 ## How to write good requirements
 
@@ -168,7 +168,7 @@ Story 6 — Add an edition (`/editions/new`):
 
 ## 6. Data
 
-All data is stored in PostgreSQL (see `docs/architecture.md`). The reference is the seed in `data/seed.json`, loaded by `npm run db:seed`: it provides the fixed dictionaries (genres and credit roles) and the sample catalog described in §4. The seed must load without a single validation error.
+All data is stored in PostgreSQL (see `docs/architecture/decisions.md`). The reference is the seed in `data/seed.json`, loaded by `npm run db:seed`: it provides the fixed dictionaries (genres and credit roles) and the sample catalog described in §4. The seed must load without a single validation error.
 
 Types: `text`, `integer`, `timestamp`. Every entity has an `id` surrogate key; works, editions and people also have a public **slug** used in URLs. The **natural key** used to match existing records is listed per entity. "Required" means the API rejects the request without it; the UI shows the same rule as a field-level error before sending.
 
@@ -259,7 +259,7 @@ Types: `text`, `integer`, `timestamp`. Every entity has an `id` surrogate key; w
 | Field | Type | Required | Rules |
 | --- | --- | --- | --- |
 | email | text | yes | Valid email address, stored lowercase, unique. Login name. |
-| password hash | text | yes | `scrypt` hash with its salt (see `docs/architecture.md`); never returned by the API. |
+| password hash | text | yes | `scrypt` hash with its salt (see `docs/architecture/decisions.md`); never returned by the API. |
 | created at | timestamp | yes | Set by the server. |
 
 The seed creates the curator account from `CURATOR_EMAIL` and `CURATOR_PASSWORD`. There is no registration or user management in the MVP.
@@ -293,7 +293,7 @@ The seed creates the curator account from `CURATOR_EMAIL` and `CURATOR_PASSWORD`
 - Are the proposed limits acceptable (title 300, name 200, publisher 200, bio/synopsis 2000, photoUrl 500), especially for long collection titles?
 - Is the ISBN unique across editions when present? It is not the edition's identity, but two editions with one ISBN would be a data-entry mistake — warn, reject, or allow?
 - Language: keep a free ISO 639-1 two-letter code, or make it a fixed dictionary like genres, so that a typo (`eng`) is rejected and "all editions in Ukrainian" stays possible later?
-- How long may a curator stay logged in (session lifetime), and is a "remember me" option wanted? Not decided in `docs/architecture.md`.
+- How long may a curator stay logged in (session lifetime), and is a "remember me" option wanted? Not decided in `docs/architecture/decisions.md`.
 - Cover fallback: a placeholder image or a generated block with the title's initials? Should the app remember that Open Library has no cover for an ISBN, or ask again on every view?
 - `photoUrl` links can rot. Should the app check reachability, or just show the initials placeholder when the image fails (as in the criteria above)?
 - On the edition page, should the authors of the contained works also be shown (useful for a collection), or is the Cast enough? The criteria above show them only on the work pages.
