@@ -1,5 +1,23 @@
 {
-  "_about": "Sample data for BookCast: books about artificial intelligence. Covers are not stored: the app builds the cover URL from the ISBN (Open Library Covers API). photoUrl is filled in by hand.",
+  "_about": "Sample data for BookCast: books about artificial intelligence. Every person, work and edition carries an explicit id so references stay unambiguous when names or titles repeat. A work has an originalTitle (the title in the language it was written in) and an optional commonTitle (the best-known English title, only when it differs). An edition title is the title as printed on that edition. contents is ordered by position. Covers are not stored: the app builds the cover URL from the ISBN (Open Library Covers API). photoUrl is filled in by hand.",
+  "languages": [
+    {
+      "key": "en",
+      "name": "English"
+    },
+    {
+      "key": "pl",
+      "name": "Polish"
+    },
+    {
+      "key": "cs",
+      "name": "Czech"
+    },
+    {
+      "key": "uk",
+      "name": "Ukrainian"
+    }
+  ],
   "genres": [
     {
       "key": "science-fiction",
@@ -87,6 +105,7 @@
   ],
   "people": [
     {
+      "id": "00000000-0000-4000-9000-000000000001",
       "name": "Kazuo Ishiguro",
       "born": 1954,
       "died": null,
@@ -94,6 +113,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000002",
       "name": "Stanisław Lem",
       "born": 1921,
       "died": 2006,
@@ -101,6 +121,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000003",
       "name": "William Gibson",
       "born": 1948,
       "died": null,
@@ -108,6 +129,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000004",
       "name": "Isaac Asimov",
       "born": 1920,
       "died": 1992,
@@ -115,6 +137,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000005",
       "name": "Philip K. Dick",
       "born": 1928,
       "died": 1982,
@@ -122,6 +145,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000006",
       "name": "Arthur C. Clarke",
       "born": 1917,
       "died": 2008,
@@ -129,6 +153,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000007",
       "name": "Ted Chiang",
       "born": 1967,
       "died": null,
@@ -136,6 +161,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000008",
       "name": "Martha Wells",
       "born": 1964,
       "died": null,
@@ -143,6 +169,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000009",
       "name": "Karel Čapek",
       "born": 1890,
       "died": 1938,
@@ -150,6 +177,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000010",
       "name": "Ann Leckie",
       "born": 1966,
       "died": null,
@@ -157,6 +185,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000011",
       "name": "E. M. Forster",
       "born": 1879,
       "died": 1970,
@@ -164,6 +193,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000012",
       "name": "Ганна Лелів",
       "born": null,
       "died": null,
@@ -171,6 +201,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000013",
       "name": "Дмитро Андрухів",
       "born": null,
       "died": null,
@@ -178,6 +209,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000014",
       "name": "Іван Сварник",
       "born": null,
       "died": null,
@@ -185,6 +217,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000015",
       "name": "Ігор Бречак",
       "born": null,
       "died": null,
@@ -192,6 +225,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000016",
       "name": "Анатолій Кисіль",
       "born": null,
       "died": null,
@@ -199,6 +233,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000017",
       "name": "Софія Скирпа",
       "born": null,
       "died": null,
@@ -206,6 +241,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000018",
       "name": "Віктор Язневич",
       "born": null,
       "died": null,
@@ -213,6 +249,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000019",
       "name": "Joanna Kilmartin",
       "born": null,
       "died": null,
@@ -220,6 +257,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000020",
       "name": "Steve Cox",
       "born": null,
       "died": null,
@@ -227,6 +265,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000021",
       "name": "Ольга Любарська",
       "born": null,
       "died": null,
@@ -234,6 +273,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000022",
       "name": "Богдан Стасюк",
       "born": null,
       "died": null,
@@ -241,6 +281,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000023",
       "name": "Володимир Анохін",
       "born": null,
       "died": null,
@@ -248,6 +289,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000024",
       "name": "Ілля Стронґовський",
       "born": null,
       "died": null,
@@ -255,6 +297,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000025",
       "name": "Віктор Харик",
       "born": null,
       "died": null,
@@ -262,6 +305,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000026",
       "name": "Тарас Бойко",
       "born": null,
       "died": null,
@@ -269,6 +313,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000027",
       "name": "Вікторія Зенгва",
       "born": null,
       "died": null,
@@ -276,6 +321,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000028",
       "name": "Євген Ширинос",
       "born": null,
       "died": null,
@@ -283,6 +329,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000029",
       "name": "Олена Ващенко",
       "born": null,
       "died": null,
@@ -290,6 +337,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000030",
       "name": "Claudia Novack-Jones",
       "born": null,
       "died": null,
@@ -297,6 +345,7 @@
       "photoUrl": null
     },
     {
+      "id": "00000000-0000-4000-9000-000000000031",
       "name": "Ivan Klíma",
       "born": null,
       "died": null,
@@ -306,12 +355,13 @@
   ],
   "works": [
     {
-      "title": "Klara and the Sun",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000101",
+      "originalTitle": "Klara and the Sun",
+      "commonTitle": null,
       "year": 2021,
       "originalLanguage": "en",
       "authors": [
-        "Kazuo Ishiguro"
+        "00000000-0000-4000-9000-000000000001"
       ],
       "genres": [
         "literary-fiction",
@@ -321,12 +371,13 @@
       "synopsis": "An Artificial Friend watches the world from a shop window until she is chosen to keep a sick girl company. A quiet story about devotion and about what makes a person irreplaceable."
     },
     {
-      "title": "Solaris",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000102",
+      "originalTitle": "Solaris",
+      "commonTitle": null,
       "year": 1961,
       "originalLanguage": "pl",
       "authors": [
-        "Stanisław Lem"
+        "00000000-0000-4000-9000-000000000002"
       ],
       "genres": [
         "science-fiction",
@@ -335,12 +386,13 @@
       "synopsis": "On a station above an ocean planet, scientists meet visitors that the planet creates from their own memories. A novel about the limits of understanding a truly alien mind."
     },
     {
-      "title": "Eden",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000103",
+      "originalTitle": "Eden",
+      "commonTitle": null,
       "year": 1959,
       "originalLanguage": "pl",
       "authors": [
-        "Stanisław Lem"
+        "00000000-0000-4000-9000-000000000002"
       ],
       "genres": [
         "science-fiction"
@@ -348,12 +400,13 @@
       "synopsis": "A crashed crew explores a planet whose society they cannot make sense of."
     },
     {
-      "title": "Return from the Stars",
+      "id": "00000000-0000-4000-9000-000000000104",
       "originalTitle": "Powrót z gwiazd",
+      "commonTitle": "Return from the Stars",
       "year": 1961,
       "originalLanguage": "pl",
       "authors": [
-        "Stanisław Lem"
+        "00000000-0000-4000-9000-000000000002"
       ],
       "genres": [
         "science-fiction",
@@ -362,12 +415,13 @@
       "synopsis": "An astronaut comes back after more than a century to an Earth where people have been made incapable of violence."
     },
     {
-      "title": "The Invincible",
+      "id": "00000000-0000-4000-9000-000000000105",
       "originalTitle": "Niezwyciężony",
+      "commonTitle": "The Invincible",
       "year": 1964,
       "originalLanguage": "pl",
       "authors": [
-        "Stanisław Lem"
+        "00000000-0000-4000-9000-000000000002"
       ],
       "genres": [
         "science-fiction",
@@ -376,12 +430,13 @@
       "synopsis": "A ship's crew faces swarms of tiny machines that evolved on their own into a collective, non-human force."
     },
     {
-      "title": "Neuromancer",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000106",
+      "originalTitle": "Neuromancer",
+      "commonTitle": null,
       "year": 1984,
       "originalLanguage": "en",
       "authors": [
-        "William Gibson"
+        "00000000-0000-4000-9000-000000000003"
       ],
       "genres": [
         "science-fiction",
@@ -390,12 +445,13 @@
       "synopsis": "A burned-out hacker is hired for one last job and ends up working for an artificial intelligence that wants to break its own limits."
     },
     {
-      "title": "I, Robot",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000107",
+      "originalTitle": "I, Robot",
+      "commonTitle": null,
       "year": 1950,
       "originalLanguage": "en",
       "authors": [
-        "Isaac Asimov"
+        "00000000-0000-4000-9000-000000000004"
       ],
       "genres": [
         "science-fiction"
@@ -403,12 +459,13 @@
       "synopsis": "Linked stories, told by robopsychologist Susan Calvin, about robots bound by the Three Laws and the paradoxes those laws create."
     },
     {
-      "title": "Do Androids Dream of Electric Sheep?",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000108",
+      "originalTitle": "Do Androids Dream of Electric Sheep?",
+      "commonTitle": null,
       "year": 1968,
       "originalLanguage": "en",
       "authors": [
-        "Philip K. Dick"
+        "00000000-0000-4000-9000-000000000005"
       ],
       "genres": [
         "science-fiction",
@@ -417,12 +474,13 @@
       "synopsis": "A bounty hunter chases escaped androids through a post-war San Francisco and starts to doubt what separates humans from machines."
     },
     {
-      "title": "2001: A Space Odyssey",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000109",
+      "originalTitle": "2001: A Space Odyssey",
+      "commonTitle": null,
       "year": 1968,
       "originalLanguage": "en",
       "authors": [
-        "Arthur C. Clarke"
+        "00000000-0000-4000-9000-000000000006"
       ],
       "genres": [
         "science-fiction",
@@ -431,12 +489,13 @@
       "synopsis": "Mysterious monoliths guide human evolution; on the voyage to Saturn the ship's computer HAL 9000 turns against the crew."
     },
     {
-      "title": "The Merchant and the Alchemist's Gate",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000110",
+      "originalTitle": "The Merchant and the Alchemist's Gate",
+      "commonTitle": null,
       "year": 2007,
       "originalLanguage": "en",
       "authors": [
-        "Ted Chiang"
+        "00000000-0000-4000-9000-000000000007"
       ],
       "genres": [
         "science-fiction"
@@ -444,12 +503,13 @@
       "synopsis": null
     },
     {
-      "title": "Exhalation",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000111",
+      "originalTitle": "Exhalation",
+      "commonTitle": null,
       "year": 2008,
       "originalLanguage": "en",
       "authors": [
-        "Ted Chiang"
+        "00000000-0000-4000-9000-000000000007"
       ],
       "genres": [
         "science-fiction",
@@ -458,12 +518,13 @@
       "synopsis": "A mechanical being studies its own brain and discovers that its universe is slowly running down."
     },
     {
-      "title": "What's Expected of Us",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000112",
+      "originalTitle": "What's Expected of Us",
+      "commonTitle": null,
       "year": 2005,
       "originalLanguage": "en",
       "authors": [
-        "Ted Chiang"
+        "00000000-0000-4000-9000-000000000007"
       ],
       "genres": [
         "science-fiction"
@@ -471,12 +532,13 @@
       "synopsis": null
     },
     {
-      "title": "The Lifecycle of Software Objects",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000113",
+      "originalTitle": "The Lifecycle of Software Objects",
+      "commonTitle": null,
       "year": 2010,
       "originalLanguage": "en",
       "authors": [
-        "Ted Chiang"
+        "00000000-0000-4000-9000-000000000007"
       ],
       "genres": [
         "science-fiction"
@@ -484,12 +546,13 @@
       "synopsis": "Over many years, a former zookeeper raises digital creatures in a virtual world — artificial minds that have to be brought up, not programmed."
     },
     {
-      "title": "Dacey's Patent Automatic Nanny",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000114",
+      "originalTitle": "Dacey's Patent Automatic Nanny",
+      "commonTitle": null,
       "year": 2011,
       "originalLanguage": "en",
       "authors": [
-        "Ted Chiang"
+        "00000000-0000-4000-9000-000000000007"
       ],
       "genres": [
         "science-fiction"
@@ -497,12 +560,13 @@
       "synopsis": null
     },
     {
-      "title": "The Truth of Fact, the Truth of Feeling",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000115",
+      "originalTitle": "The Truth of Fact, the Truth of Feeling",
+      "commonTitle": null,
       "year": 2013,
       "originalLanguage": "en",
       "authors": [
-        "Ted Chiang"
+        "00000000-0000-4000-9000-000000000007"
       ],
       "genres": [
         "science-fiction"
@@ -510,12 +574,13 @@
       "synopsis": null
     },
     {
-      "title": "The Great Silence",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000116",
+      "originalTitle": "The Great Silence",
+      "commonTitle": null,
       "year": 2015,
       "originalLanguage": "en",
       "authors": [
-        "Ted Chiang"
+        "00000000-0000-4000-9000-000000000007"
       ],
       "genres": [
         "science-fiction"
@@ -523,12 +588,13 @@
       "synopsis": null
     },
     {
-      "title": "Omphalos",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000117",
+      "originalTitle": "Omphalos",
+      "commonTitle": null,
       "year": 2019,
       "originalLanguage": "en",
       "authors": [
-        "Ted Chiang"
+        "00000000-0000-4000-9000-000000000007"
       ],
       "genres": [
         "science-fiction"
@@ -536,12 +602,13 @@
       "synopsis": null
     },
     {
-      "title": "Anxiety Is the Dizziness of Freedom",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000118",
+      "originalTitle": "Anxiety Is the Dizziness of Freedom",
+      "commonTitle": null,
       "year": 2019,
       "originalLanguage": "en",
       "authors": [
-        "Ted Chiang"
+        "00000000-0000-4000-9000-000000000007"
       ],
       "genres": [
         "science-fiction",
@@ -550,12 +617,13 @@
       "synopsis": null
     },
     {
-      "title": "All Systems Red",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000119",
+      "originalTitle": "All Systems Red",
+      "commonTitle": null,
       "year": 2017,
       "originalLanguage": "en",
       "authors": [
-        "Martha Wells"
+        "00000000-0000-4000-9000-000000000008"
       ],
       "genres": [
         "science-fiction",
@@ -564,12 +632,13 @@
       "synopsis": "A security android that hacked its own control module would rather watch TV series, but still has to keep a team of scientists alive."
     },
     {
-      "title": "R.U.R.",
+      "id": "00000000-0000-4000-9000-000000000120",
       "originalTitle": "R.U.R. (Rossumovi Univerzální Roboti)",
+      "commonTitle": "R.U.R.",
       "year": 1920,
       "originalLanguage": "cs",
       "authors": [
-        "Karel Čapek"
+        "00000000-0000-4000-9000-000000000009"
       ],
       "genres": [
         "drama",
@@ -579,12 +648,13 @@
       "synopsis": "A factory mass-produces artificial workers called robots, until they rise against their makers. The play that gave the world the word \"robot\"."
     },
     {
-      "title": "Ancillary Justice",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000121",
+      "originalTitle": "Ancillary Justice",
+      "commonTitle": null,
       "year": 2013,
       "originalLanguage": "en",
       "authors": [
-        "Ann Leckie"
+        "00000000-0000-4000-9000-000000000010"
       ],
       "genres": [
         "science-fiction",
@@ -593,12 +663,13 @@
       "synopsis": "The AI of a destroyed warship, now living in a single human body, sets out for revenge."
     },
     {
-      "title": "The Machine Stops",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000122",
+      "originalTitle": "The Machine Stops",
+      "commonTitle": null,
       "year": 1909,
       "originalLanguage": "en",
       "authors": [
-        "E. M. Forster"
+        "00000000-0000-4000-9000-000000000011"
       ],
       "genres": [
         "science-fiction",
@@ -607,12 +678,13 @@
       "synopsis": "Humanity lives alone in underground cells, talking only through screens, with every need served by the all-powerful Machine — until it starts to fail."
     },
     {
-      "title": "The Celestial Omnibus",
-      "originalTitle": null,
+      "id": "00000000-0000-4000-9000-000000000123",
+      "originalTitle": "The Celestial Omnibus",
+      "commonTitle": null,
       "year": 1908,
       "originalLanguage": "en",
       "authors": [
-        "E. M. Forster"
+        "00000000-0000-4000-9000-000000000011"
       ],
       "genres": [
         "fantasy"
@@ -622,470 +694,501 @@
   ],
   "editions": [
     {
+      "id": "00000000-0000-4000-9000-000000000201",
       "title": "Klara and the Sun",
       "publisher": "Faber & Faber",
       "year": 2021,
       "language": "en",
       "isbn": "9780571364879",
-      "works": [
-        "Klara and the Sun"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000101" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000202",
       "title": "Klara and the Sun",
       "publisher": "Alfred A. Knopf",
       "year": 2021,
       "language": "en",
       "isbn": "9780593318171",
-      "works": [
-        "Klara and the Sun"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000101" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000203",
       "title": "Клара і Сонце",
       "publisher": "Видавництво Старого Лева",
       "year": 2021,
       "language": "uk",
       "isbn": "9786176799511",
-      "works": [
-        "Klara and the Sun"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000101" }
       ],
       "credits": [
         {
-          "person": "Ганна Лелів",
+          "person": "00000000-0000-4000-9000-000000000012",
           "role": "translator"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000204",
       "title": "Solaris",
       "publisher": "Wydawnictwo MON",
       "year": 1961,
       "language": "pl",
       "isbn": null,
-      "works": [
-        "Solaris"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000102" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000205",
       "title": "Solaris",
       "publisher": "Walker and Company",
       "year": 1970,
       "language": "en",
       "isbn": null,
-      "works": [
-        "Solaris"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000102" }
       ],
       "credits": [
         {
-          "person": "Joanna Kilmartin",
+          "person": "00000000-0000-4000-9000-000000000019",
           "role": "translator"
         },
         {
-          "person": "Steve Cox",
+          "person": "00000000-0000-4000-9000-000000000020",
           "role": "translator"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000206",
       "title": "Соляріс",
       "publisher": "Навчальна книга – Богдан",
       "year": 2017,
       "language": "uk",
       "isbn": "9789661047616",
-      "works": [
-        "Solaris"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000102" }
       ],
       "credits": [
         {
-          "person": "Дмитро Андрухів",
+          "person": "00000000-0000-4000-9000-000000000013",
           "role": "translator"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000207",
       "title": "Едем. Соляріс. Повернення із зірок. Непереможний. Том 1",
       "publisher": "Навчальна книга – Богдан",
       "year": 2025,
       "language": "uk",
       "isbn": "9789661045353",
-      "works": [
-        "Eden",
-        "Solaris",
-        "Return from the Stars",
-        "The Invincible"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000103" },
+        { "position": 2, "work": "00000000-0000-4000-9000-000000000102" },
+        { "position": 3, "work": "00000000-0000-4000-9000-000000000104" },
+        { "position": 4, "work": "00000000-0000-4000-9000-000000000105" }
       ],
       "credits": [
         {
-          "person": "Дмитро Андрухів",
+          "person": "00000000-0000-4000-9000-000000000013",
           "role": "translator"
         },
         {
-          "person": "Іван Сварник",
+          "person": "00000000-0000-4000-9000-000000000014",
           "role": "translator"
         },
         {
-          "person": "Ігор Бречак",
+          "person": "00000000-0000-4000-9000-000000000015",
           "role": "translator"
         },
         {
-          "person": "Анатолій Кисіль",
+          "person": "00000000-0000-4000-9000-000000000016",
           "role": "translator"
         },
         {
-          "person": "Софія Скирпа",
+          "person": "00000000-0000-4000-9000-000000000017",
           "role": "translator"
         },
         {
-          "person": "Віктор Язневич",
+          "person": "00000000-0000-4000-9000-000000000018",
           "role": "afterword"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000208",
       "title": "Neuromancer",
       "publisher": "Ace Books",
       "year": 1984,
       "language": "en",
       "isbn": null,
-      "works": [
-        "Neuromancer"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000106" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000209",
       "title": "Neuromancer",
       "publisher": "Gollancz",
       "year": 2016,
       "language": "en",
       "isbn": "9781473217386",
-      "works": [
-        "Neuromancer"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000106" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000210",
       "title": "Нейромант",
       "publisher": "Видавництво",
       "year": 2017,
       "language": "uk",
       "isbn": "9789669757432",
-      "works": [
-        "Neuromancer"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000106" }
       ],
       "credits": [
         {
-          "person": "Ольга Любарська",
+          "person": "00000000-0000-4000-9000-000000000021",
           "role": "translator"
         },
         {
-          "person": "Богдан Стасюк",
+          "person": "00000000-0000-4000-9000-000000000022",
           "role": "foreword"
         },
         {
-          "person": "Володимир Анохін",
+          "person": "00000000-0000-4000-9000-000000000023",
           "role": "editor"
         },
         {
-          "person": "Ілля Стронґовський",
+          "person": "00000000-0000-4000-9000-000000000024",
           "role": "designer"
         },
         {
-          "person": "Віктор Харик",
+          "person": "00000000-0000-4000-9000-000000000025",
           "role": "designer"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000211",
       "title": "Нейромант",
       "publisher": "Видавництво",
       "year": 2020,
       "language": "uk",
       "isbn": "9786177818075",
-      "works": [
-        "Neuromancer"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000106" }
       ],
       "credits": [
         {
-          "person": "Ольга Любарська",
+          "person": "00000000-0000-4000-9000-000000000021",
           "role": "translator"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000212",
       "title": "I, Robot",
       "publisher": "Gnome Press",
       "year": 1950,
       "language": "en",
       "isbn": null,
-      "works": [
-        "I, Robot"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000107" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000213",
       "title": "I, Robot",
       "publisher": "Bantam Spectra",
       "year": 1991,
       "language": "en",
       "isbn": "9780553294385",
-      "works": [
-        "I, Robot"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000107" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000214",
       "title": "Do Androids Dream of Electric Sheep?",
       "publisher": "Doubleday",
       "year": 1968,
       "language": "en",
       "isbn": null,
-      "works": [
-        "Do Androids Dream of Electric Sheep?"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000108" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000215",
       "title": "Do Androids Dream of Electric Sheep?",
       "publisher": "Gollancz",
       "year": 2010,
       "language": "en",
       "isbn": "9780575094185",
-      "works": [
-        "Do Androids Dream of Electric Sheep?"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000108" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000216",
       "title": "Чи мріють андроїди про електричних овець?",
       "publisher": "Комубук",
       "year": 2016,
       "language": "uk",
       "isbn": "9789669749062",
-      "works": [
-        "Do Androids Dream of Electric Sheep?"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000108" }
       ],
       "credits": [
         {
-          "person": "Тарас Бойко",
+          "person": "00000000-0000-4000-9000-000000000026",
           "role": "translator"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000217",
       "title": "2001: A Space Odyssey",
       "publisher": "New American Library",
       "year": 1968,
       "language": "en",
       "isbn": null,
-      "works": [
-        "2001: A Space Odyssey"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000109" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000218",
       "title": "2001: A Space Odyssey",
       "publisher": "Roc",
       "year": 2000,
       "language": "en",
       "isbn": "9780451457998",
-      "works": [
-        "2001: A Space Odyssey"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000109" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000219",
       "title": "2001: Космічна одіссея",
       "publisher": "КСД",
       "year": 2020,
       "language": "uk",
       "isbn": "9786171216587",
-      "works": [
-        "2001: A Space Odyssey"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000109" }
       ],
       "credits": [
         {
-          "person": "Вікторія Зенгва",
+          "person": "00000000-0000-4000-9000-000000000027",
           "role": "translator"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000220",
       "title": "The Lifecycle of Software Objects",
       "publisher": "Subterranean Press",
       "year": 2010,
       "language": "en",
       "isbn": null,
-      "works": [
-        "The Lifecycle of Software Objects"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000113" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000221",
       "title": "Exhalation: Stories",
       "publisher": "Alfred A. Knopf",
       "year": 2019,
       "language": "en",
       "isbn": "9781101947883",
-      "works": [
-        "The Merchant and the Alchemist's Gate",
-        "Exhalation",
-        "What's Expected of Us",
-        "The Lifecycle of Software Objects",
-        "Dacey's Patent Automatic Nanny",
-        "The Truth of Fact, the Truth of Feeling",
-        "The Great Silence",
-        "Omphalos",
-        "Anxiety Is the Dizziness of Freedom"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000110" },
+        { "position": 2, "work": "00000000-0000-4000-9000-000000000111" },
+        { "position": 3, "work": "00000000-0000-4000-9000-000000000112" },
+        { "position": 4, "work": "00000000-0000-4000-9000-000000000113" },
+        { "position": 5, "work": "00000000-0000-4000-9000-000000000114" },
+        { "position": 6, "work": "00000000-0000-4000-9000-000000000115" },
+        { "position": 7, "work": "00000000-0000-4000-9000-000000000116" },
+        { "position": 8, "work": "00000000-0000-4000-9000-000000000117" },
+        { "position": 9, "work": "00000000-0000-4000-9000-000000000118" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000222",
       "title": "Exhalation",
       "publisher": "Picador",
       "year": 2020,
       "language": "en",
       "isbn": "9781529014495",
-      "works": [
-        "The Merchant and the Alchemist's Gate",
-        "Exhalation",
-        "What's Expected of Us",
-        "The Lifecycle of Software Objects",
-        "Dacey's Patent Automatic Nanny",
-        "The Truth of Fact, the Truth of Feeling",
-        "The Great Silence",
-        "Omphalos",
-        "Anxiety Is the Dizziness of Freedom"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000110" },
+        { "position": 2, "work": "00000000-0000-4000-9000-000000000111" },
+        { "position": 3, "work": "00000000-0000-4000-9000-000000000112" },
+        { "position": 4, "work": "00000000-0000-4000-9000-000000000113" },
+        { "position": 5, "work": "00000000-0000-4000-9000-000000000114" },
+        { "position": 6, "work": "00000000-0000-4000-9000-000000000115" },
+        { "position": 7, "work": "00000000-0000-4000-9000-000000000116" },
+        { "position": 8, "work": "00000000-0000-4000-9000-000000000117" },
+        { "position": 9, "work": "00000000-0000-4000-9000-000000000118" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000223",
       "title": "Видих",
       "publisher": "Book Chef",
       "year": 2026,
       "language": "uk",
       "isbn": null,
-      "works": [
-        "The Merchant and the Alchemist's Gate",
-        "Exhalation",
-        "What's Expected of Us",
-        "The Lifecycle of Software Objects",
-        "Dacey's Patent Automatic Nanny",
-        "The Truth of Fact, the Truth of Feeling",
-        "The Great Silence",
-        "Omphalos",
-        "Anxiety Is the Dizziness of Freedom"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000110" },
+        { "position": 2, "work": "00000000-0000-4000-9000-000000000111" },
+        { "position": 3, "work": "00000000-0000-4000-9000-000000000112" },
+        { "position": 4, "work": "00000000-0000-4000-9000-000000000113" },
+        { "position": 5, "work": "00000000-0000-4000-9000-000000000114" },
+        { "position": 6, "work": "00000000-0000-4000-9000-000000000115" },
+        { "position": 7, "work": "00000000-0000-4000-9000-000000000116" },
+        { "position": 8, "work": "00000000-0000-4000-9000-000000000117" },
+        { "position": 9, "work": "00000000-0000-4000-9000-000000000118" }
       ],
       "credits": [
         {
-          "person": "Євген Ширинос",
+          "person": "00000000-0000-4000-9000-000000000028",
           "role": "translator"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000224",
       "title": "All Systems Red",
       "publisher": "Tor.com",
       "year": 2017,
       "language": "en",
       "isbn": "9780765397539",
-      "works": [
-        "All Systems Red"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000119" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000225",
       "title": "Щоденники вбивцебота. Всі системи: небезпека",
       "publisher": "Жорж",
       "year": 2023,
       "language": "uk",
       "isbn": "9786178023737",
-      "works": [
-        "All Systems Red"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000119" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000226",
       "title": "R.U.R.",
       "publisher": "Aventinum",
       "year": 1920,
       "language": "cs",
       "isbn": null,
-      "works": [
-        "R.U.R."
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000120" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000227",
       "title": "R.U.R. (Rossum's Universal Robots)",
       "publisher": "Penguin Classics",
       "year": 2004,
       "language": "en",
       "isbn": "9780141182087",
-      "works": [
-        "R.U.R."
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000120" }
       ],
       "credits": [
         {
-          "person": "Claudia Novack-Jones",
+          "person": "00000000-0000-4000-9000-000000000030",
           "role": "translator"
         },
         {
-          "person": "Ivan Klíma",
+          "person": "00000000-0000-4000-9000-000000000031",
           "role": "introduction"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000228",
       "title": "Р.У.Р. (Россумові універсальні роботи)",
       "publisher": "Комора",
       "year": 2021,
       "language": "uk",
       "isbn": "9786177286683",
-      "works": [
-        "R.U.R."
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000120" }
       ],
       "credits": [
         {
-          "person": "Олена Ващенко",
+          "person": "00000000-0000-4000-9000-000000000029",
           "role": "translator"
         }
       ]
     },
     {
+      "id": "00000000-0000-4000-9000-000000000229",
       "title": "Ancillary Justice",
       "publisher": "Orbit",
       "year": 2013,
       "language": "en",
       "isbn": "9780316246620",
-      "works": [
-        "Ancillary Justice"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000121" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000230",
       "title": "The Oxford and Cambridge Review, November 1909",
       "publisher": "Archibald Constable",
       "year": 1909,
       "language": "en",
       "isbn": null,
-      "works": [
-        "The Machine Stops"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000122" }
       ],
       "credits": []
     },
     {
+      "id": "00000000-0000-4000-9000-000000000231",
       "title": "The Machine Stops",
       "publisher": "Penguin Classics",
       "year": 2011,
       "language": "en",
       "isbn": "9780141195988",
-      "works": [
-        "The Machine Stops",
-        "The Celestial Omnibus"
+      "contents": [
+        { "position": 1, "work": "00000000-0000-4000-9000-000000000122" },
+        { "position": 2, "work": "00000000-0000-4000-9000-000000000123" }
       ],
       "credits": []
     }
