@@ -1,6 +1,7 @@
 import { useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchCatalog } from '../api/works.ts';
+import GenreList from '../components/GenreList.tsx';
 import { useResource } from '../hooks/useResource.ts';
 
 function editionCountLabel(count: number): string {
@@ -64,16 +65,7 @@ export default function WorksCatalogPage() {
 
               <p className="mt-1 text-sm text-slate-500">{work.year}</p>
 
-              <ul aria-label={`Genres of ${work.title}`} className="mt-2 flex flex-wrap gap-2">
-                {work.genres.map((genre) => (
-                  <li
-                    key={genre.key}
-                    className="rounded-full bg-slate-200 px-2.5 py-0.5 text-xs text-slate-700"
-                  >
-                    {genre.name}
-                  </li>
-                ))}
-              </ul>
+              <GenreList title={work.title} genres={work.genres} />
 
               <p className="mt-2 text-sm text-slate-600">
                 {editionCountLabel(work.editionCount)}

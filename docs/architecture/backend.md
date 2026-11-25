@@ -66,7 +66,7 @@ apps/api/
 | --- | --- | --- | --- | --- |
 | GET | `/api/version` | guest | API name and version | `200 { name, version }` |
 | GET | `/api/works` | guest | catalog rows, ordered by `lower(title) COLLATE "C", slug COLLATE "C"` | `200 [{ slug, title, year, authors[], genres[], editionCount }]` |
-| GET | `/api/works/:slug` | guest | work with authors, genres and the editions containing it | `200 { slug, title, year, originalLanguage, authors[], genres[], editions[] }` plus optional `originalTitle`, `synopsis` |
+| GET | `/api/works/:slug` | guest | work with authors, genres and the editions containing it, ordered by year, then title, then publisher (missing publisher last) | `200 { slug, title, year, originalLanguage, authors[], genres[], editions[] }` plus optional `originalTitle`, `synopsis` |
 | GET | `/api/editions/:slug` | guest | edition with Contents and Cast | `200 { slug, title, year, language, contents[], cast[] }` plus optional `publisher`, `isbn` |
 | GET | `/api/people/:slug` | guest | person with their filmography | `200 { slug, name, works[], editions[] }` plus optional `born`, `died`, `bio`, `photoUrl` |
 | GET | `/api/genres` | guest | genre dictionary | `200 [{ key, name }]` |
@@ -97,8 +97,8 @@ These are the item shapes behind the endpoint table. Field names are part of the
 { "slug": "solaris", "title": "Solaris", "year": 1961, "originalLanguage": "pl",
   "authors": [{ "slug": "stanislaw-lem", "name": "Stanisław Lem" }],
   "genres": [{ "key": "science-fiction", "name": "Science fiction" }],
-  "editions": [{ "slug": "solaris-1961", "title": "Solaris", "year": 1961,
-                 "language": "pl" }] }
+  "editions": [{ "slug": "solaris-1961", "title": "Solaris", "publisher": "MON",
+                 "year": 1961, "language": "pl", "isbn": "9788301000000" }] }
 
 // GET /api/editions/:slug
 { "slug": "sol-jar-1", "title": "Соляріс", "year": 2017, "language": "uk",
@@ -123,6 +123,8 @@ These are the item shapes behind the endpoint table. Field names are part of the
 ```
 
 `cast[]` and a person's `editions[]` are already grouped by credit role in `credit_roles.position` order; people inside a group are ordered by name in character-code order. `cast[]` is absent for an edition with no edition credits, and `works[]` is absent for a person with no author credits. Existing works and people are referenced by `slug`; genres and credit roles by `key`. Ids never appear.
+
+A work's `editions[]` is ordered by year ascending, then title, then publisher — title and publisher in character-code order (`COLLATE "C"`), and an edition without a publisher comes last. The browser renders that order unchanged. An edition's `publisher` and `isbn` are omitted when absent.
 
 ## Configuration
 

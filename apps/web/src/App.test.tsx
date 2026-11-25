@@ -29,6 +29,29 @@ describe('App', () => {
     expect(await screen.findByText('No works in the catalog yet.')).toBeInTheDocument();
   });
 
+  it('renders the work page at /works/:slug', async () => {
+    const fetchMock = vi.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          slug: 'solaris',
+          title: 'Solaris',
+          year: 1961,
+          originalLanguage: 'pl',
+          authors: [],
+          genres: [],
+          editions: [],
+        }),
+        { status: 200, headers: { 'Content-Type': 'application/json' } },
+      ),
+    );
+    vi.stubGlobal('fetch', fetchMock);
+
+    renderAt('/works/solaris');
+
+    expect(await screen.findByRole('heading', { level: 1 })).toHaveTextContent('Solaris');
+    expect(fetchMock).toHaveBeenCalledWith('/api/works/solaris', expect.anything());
+  });
+
   it('renders the not-found page with a link back to the catalog for unknown URLs', () => {
     renderAt('/does-not-exist');
 

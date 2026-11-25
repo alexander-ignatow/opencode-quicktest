@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useState } from 'react';
+import { ApiError, type ApiErrorCode } from '../api/client.ts';
 
 export type ResourceState<T> =
   | { status: 'loading' }
   | { status: 'success'; data: T }
-  | { status: 'error'; message: string };
+  | { status: 'error'; message: string; code: ApiErrorCode | 'UNKNOWN' };
 
 export interface Resource<T> {
   state: ResourceState<T>;
@@ -33,7 +34,8 @@ export function useResource<T>(load: (signal: AbortSignal) => Promise<T>): Resou
         if (controller.signal.aborted) return;
 
         const message = error instanceof Error ? error.message : 'Unknown error';
-        setState({ status: 'error', message });
+        const code = error instanceof ApiError ? error.code : 'UNKNOWN';
+        setState({ status: 'error', message, code });
       },
     );
 

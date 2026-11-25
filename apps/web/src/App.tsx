@@ -1,5 +1,6 @@
 import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import NotFoundPage from './pages/NotFoundPage.tsx';
+import WorkPage from './pages/WorkPage.tsx';
 import WorksCatalogPage from './pages/WorksCatalogPage.tsx';
 
 function Layout() {
@@ -25,6 +26,7 @@ export default function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route index element={<WorksCatalogPage />} />
+        <Route path="works/:slug" element={<WorkPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
