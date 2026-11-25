@@ -23,4 +23,16 @@ describe('GET /api/version', () => {
     expect(response.status).toBe(404);
     expect(response.body).toEqual({ error: { code: 'NOT_FOUND', message: 'Not found' } });
   });
+
+  it('returns a JSON 400 for a malformed JSON body', async () => {
+    const response = await request(app)
+      .post('/api/works')
+      .set('Content-Type', 'application/json')
+      .send('{"broken":');
+
+    expect(response.status).toBe(400);
+    expect(response.body).toEqual({
+      error: { code: 'VALIDATION_FAILED', message: 'Invalid JSON body' },
+    });
+  });
 });

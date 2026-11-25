@@ -7,6 +7,7 @@ import { afterAll, describe, expect, it, vi } from 'vitest';
 
 vi.mock('./db/client.ts', () => ({ db: {} }));
 
+import { notFoundHandler } from './lib/errors.ts';
 import { serveFrontend } from './server.ts';
 
 // A fake frontend build: one index.html and one static file.
@@ -21,6 +22,8 @@ function createApp() {
   testApp.get('/api/ping', (_request, response) => {
     response.json({ ok: true });
   });
+  // Same composition as server.ts: the API 404 handler sits before the frontend.
+  testApp.use('/api', notFoundHandler);
   serveFrontend(testApp, distDir);
   return testApp;
 }
@@ -47,10 +50,13 @@ describe('serveFrontend', () => {
     expect(response.text).toContain('<title>App</title>');
   });
 
-  it('keeps API routes working and unknown API routes as 404', async () => {
+  it('keeps API routes working and unknown API routes as a JSON 404', async () => {
     const app = createApp();
 
     expect((await request(app).get('/api/ping')).body).toEqual({ ok: true });
-    expect((await request(app).get('/api/does-not-exist')).status).toBe(404);
+
+    const notFound = await request(app).get('/api/does-not-exist');
+    expect(notFound.status).toBe(404);
+    expect(notFound.body).toEqual({ error: { code: 'NOT_FOUND', message: 'Not found' } });
   });
 });

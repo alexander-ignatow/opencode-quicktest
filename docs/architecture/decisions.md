@@ -13,6 +13,13 @@ Template:
 - **Consequences:** What becomes easier or harder?
 ```
 
+### 2026-11-25 — Verification fixes: order oracle, JSON 400, final error middleware
+
+- **Context:** Reviewing Story 1 found that the catalog order was only checked against the API’s own output, a malformed JSON body became `500`, authors were selected by role level, and the error middleware ran before the static frontend middleware, so static failures bypassed it.
+- **Decision:** The E2E test computes the expected title order itself (lowercase, character codes, then slug); the slug tie-breaker uses `COLLATE "C"`. `express.json()` failures map to `400 VALIDATION_FAILED` with "Invalid JSON body". Authors are selected by `credit_roles.key = 'author'`. The production static middleware is mounted before `errorHandler`, which stays last. New unit tests cover `useResource` (load, error + retry, abort) and `getJson` (JSON error, non-JSON fallback, signal). `backend.md` records that `GET /api/works?q=` is not implemented until Story 6.
+- **Alternatives:** Keeping the API as its own E2E oracle — cannot detect a wrong `ORDER BY`; filtering authors by level — correct only while `author` is the sole work-level role; mapping body-parser errors later with the first POST — leaves the inherited contract wrong in the meantime.
+- **Consequences:** The catalog order now has an independent regression test. The error contract is complete for the coming create endpoint. `server.ts` mounts the frontend build, then the error handler, then starts listening only under `import.meta.main`.
+
 ### 2026-11-25 — Works catalog: grouped queries and the first app shell
 
 - **Context:** Story 1 is the first product feature. The API only had `GET /api/version` and the web app was the starter welcome screen. The catalog must arrive in one deterministic order and give the page loading, error-with-retry and empty states.

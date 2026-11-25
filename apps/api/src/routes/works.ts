@@ -35,7 +35,7 @@ worksRouter.get('/', async (_request, response, next) => {
         year: works.year,
       })
       .from(works)
-      .orderBy(sql`lower(${works.title}) collate "C"`, works.slug);
+      .orderBy(sql`lower(${works.title}) collate "C"`, sql`${works.slug} collate "C"`);
 
     if (workRows.length === 0) {
       response.json([]);
@@ -53,7 +53,8 @@ worksRouter.get('/', async (_request, response, next) => {
       .from(workCredits)
       .innerJoin(people, eq(people.id, workCredits.personId))
       .innerJoin(creditRoles, eq(creditRoles.id, workCredits.roleId))
-      .where(and(inArray(workCredits.workId, workIds), eq(creditRoles.level, 'work')))
+      // Authors are work credits with the `author` role — not every work-level role.
+      .where(and(inArray(workCredits.workId, workIds), eq(creditRoles.key, 'author')))
       .orderBy(sql`${people.name} collate "C"`);
 
     const genreRows = await db

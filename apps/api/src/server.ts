@@ -31,7 +31,6 @@ app.use('/api/works', worksRouter);
 // Unknown /api routes answer with JSON; every other path falls through to the
 // frontend (Vite in development, the built app in production).
 app.use('/api', notFoundHandler);
-app.use(errorHandler);
 
 // Production: serve the built frontend (apps/web/dist) from Express, so the whole
 // application runs as one service on one port. Unknown /api routes still return 404,
@@ -48,20 +47,23 @@ export function serveFrontend(target: Express, distDir: string) {
   });
 }
 
+// Serve the frontend only from the production build (`npm run build`, then `npm start`
+// runs dist/server.js). `npm run dev` runs src/server.ts and leaves the frontend to Vite.
+const runningBuild = path.basename(path.dirname(fileURLToPath(import.meta.url))) === 'dist';
+const webDist = fileURLToPath(new URL('../../web/dist', import.meta.url));
+if (runningBuild && existsSync(path.join(webDist, 'index.html'))) {
+  serveFrontend(app, webDist);
+  console.log(`Serving the frontend from ${webDist}`);
+}
+
+// Must stay last so errors thrown by the static frontend middleware are caught too.
+app.use(errorHandler);
+
 // Start the HTTP server only when this file is run directly
 // (`npm run dev` / `npm start`), not when it is imported by tests.
 if (import.meta.main) {
   // Hosting platforms usually pass the port in PORT. Locally API_PORT or 3001 is used.
   const port = Number(process.env.PORT) || Number(process.env.API_PORT) || 3001;
-
-  // Serve the frontend only from the production build (`npm run build`, then `npm start`
-  // runs dist/server.js). `npm run dev` runs src/server.ts and leaves the frontend to Vite.
-  const runningBuild = path.basename(path.dirname(fileURLToPath(import.meta.url))) === 'dist';
-  const webDist = fileURLToPath(new URL('../../web/dist', import.meta.url));
-  if (runningBuild && existsSync(path.join(webDist, 'index.html'))) {
-    serveFrontend(app, webDist);
-    console.log(`Serving the frontend from ${webDist}`);
-  }
 
   app.listen(port, (error) => {
     // Express 5 reports startup problems here, for example "port already in use".

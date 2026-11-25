@@ -34,6 +34,15 @@ export const notFoundHandler: RequestHandler = (_request, response) => {
   response.status(404).json({ error: { code: 'NOT_FOUND', message: 'Not found' } });
 };
 
+interface BodyParserError extends Error {
+  status?: number;
+}
+
+/** `express.json()` rejects malformed bodies with a 400 SyntaxError. */
+function isMalformedJson(error: unknown): error is BodyParserError {
+  return error instanceof SyntaxError && (error as BodyParserError).status === 400;
+}
+
 export const errorHandler: ErrorRequestHandler = (error, _request, response, next) => {
   if (response.headersSent) {
     next(error);
@@ -48,6 +57,13 @@ export const errorHandler: ErrorRequestHandler = (error, _request, response, nex
         ...(error.fields ? { fields: error.fields } : {}),
         ...(error.details ? { details: error.details } : {}),
       },
+    });
+    return;
+  }
+
+  if (isMalformedJson(error)) {
+    response.status(400).json({
+      error: { code: 'VALIDATION_FAILED', message: 'Invalid JSON body' },
     });
     return;
   }
