@@ -9,8 +9,15 @@
   "default_agent": "build",
 
   // Extra files loaded into every agent's context, in addition to AGENTS.md.
-  // glossary.md keeps the agent from mixing up similar words of your domain.
-  "instructions": ["docs/requirements.md", "docs/architecture.md", "docs/glossary.md"],
+  // glossary.md keeps the agent from mixing up similar words of your domain;
+  // the architecture overview and decision log keep it from inventing its own structure.
+  // The rest of docs/architecture/ is read on demand, not loaded into every session.
+  "instructions": [
+    "docs/requirements.md",
+    "docs/architecture/README.md",
+    "docs/architecture/decisions.md",
+    "docs/glossary.md",
+  ],
 
   // Rules are checked from top to bottom and the LAST matching rule wins,
   // so broad rules come first and exceptions follow them.

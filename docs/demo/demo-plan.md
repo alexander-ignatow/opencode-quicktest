@@ -167,6 +167,14 @@ If time runs out in Step 5: skip the review (5.5) and say "the same cycle as wit
 
 Message: the model made the mistakes, and the model found them — because the *process* has a review in a fresh session, not because the model is smart. Links to the first key message (section 8).
 
+### Step 4. Requirements (live): three prompts
+
+1. **Analyst completes the requirements** — switch to `analyst`, prompt from guide 4.1. It asks questions first; I answer; it writes acceptance criteria, data and open questions, and updates the glossary.
+2. **QA review in a fresh session** — `/new`, switch to `plan`, prompt from guide 4.2. It lists vague or untestable criteria and contradictions.
+3. **Analyst fixes the findings** — back to `analyst`: "Fix findings N, M from the review; leave K as is." Show `git diff docs/requirements.md`.
+
+Message: the model made the mistakes, and the model found them — because the *process* has a review in a fresh session, not because the model is smart. Links to the first key message (section 8).
+
 Timing: models are slow; see the run log for real numbers.
 
 ### Step 5. Architecture (live)
