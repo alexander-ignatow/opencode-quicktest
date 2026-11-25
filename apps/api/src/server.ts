@@ -2,6 +2,8 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express, { type Express } from 'express';
+import { errorHandler, notFoundHandler } from './lib/errors.ts';
+import { worksRouter } from './routes/works.ts';
 
 interface PackageInfo {
   name: string;
@@ -23,6 +25,13 @@ app.use(express.json());
 app.get('/api/version', (_request, response) => {
   response.json({ name: packageInfo.name, version: packageInfo.version });
 });
+
+app.use('/api/works', worksRouter);
+
+// Unknown /api routes answer with JSON; every other path falls through to the
+// frontend (Vite in development, the built app in production).
+app.use('/api', notFoundHandler);
+app.use(errorHandler);
 
 // Production: serve the built frontend (apps/web/dist) from Express, so the whole
 // application runs as one service on one port. Unknown /api routes still return 404,

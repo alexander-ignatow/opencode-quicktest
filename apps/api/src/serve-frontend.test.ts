@@ -3,7 +3,10 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import express from 'express';
 import request from 'supertest';
-import { afterAll, describe, expect, it } from 'vitest';
+import { afterAll, describe, expect, it, vi } from 'vitest';
+
+vi.mock('./db/client.ts', () => ({ db: {} }));
+
 import { serveFrontend } from './server.ts';
 
 // A fake frontend build: one index.html and one static file.

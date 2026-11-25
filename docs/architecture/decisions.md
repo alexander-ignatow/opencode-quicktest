@@ -13,6 +13,13 @@ Template:
 - **Consequences:** What becomes easier or harder?
 ```
 
+### 2026-11-25 — Works catalog: grouped queries and the first app shell
+
+- **Context:** Story 1 is the first product feature. The API only had `GET /api/version` and the web app was the starter welcome screen. The catalog must arrive in one deterministic order and give the page loading, error-with-retry and empty states.
+- **Decision:** `GET /api/works` lives in `routes/works.ts`: four Drizzle selects (works ordered by `lower(title) COLLATE "C", slug`; authors; genres; edition counts) grouped in JS into the documented response. `lib/errors.ts` adds `ApiError`, the JSON API 404 handler and the error middleware. The web app installs `react-router-dom` (the approved router), gains `api/client.ts` (the only `fetch` plus `ApiError`), `api/works.ts`, `useResource`, the catalog page and a catch-all not-found page; the starter welcome screen and its version call are removed. `GET /api/works?q=` (autocomplete) ships with Story 6, and Work/Edition/Person pages with stories 2–4, so their links currently reach the catch-all.
+- **Alternatives:** One raw SQL query with `json_agg` — one round trip, but less readable and untyped; a page-shaped endpoint — not reusable by later pages; keeping the welcome screen next to the catalog — contradicts replacing the starter.
+- **Consequences:** Catalog order stays a database rule and is covered end to end, while unit tests mock `db` with a thenable select chain. Every API test that imports `app` must mock `db`, because the client reads `DATABASE_URL` at import time. The catalog page is the first consumer of `useResource`, which later pages reuse.
+
 ### 2026-11-25 — `db:seed` replaces the catalog; env comes from the root `.env`
 
 - **Context:** The project had no database layer, while requirements §6 expects `npm run db:seed` to load `data/seed.json` and the documented stack is Drizzle on PostgreSQL. The seed needed a repeat-run rule, a way to find `DATABASE_URL`, and behaviour when curator credentials are absent.

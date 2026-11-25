@@ -1,31 +1,38 @@
 import { render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
 import { describe, expect, it, vi } from 'vitest';
 import App from './App.tsx';
 
+function renderAt(path: string) {
+  return render(
+    <MemoryRouter initialEntries={[path]}>
+      <App />
+    </MemoryRouter>,
+  );
+}
+
 describe('App', () => {
-  it('shows the backend version when the API responds', async () => {
-    const fetchMock = vi.fn().mockResolvedValue(
-      new Response(JSON.stringify({ name: 'api', version: '1.2.3' }), {
-        status: 200,
-        headers: { 'Content-Type': 'application/json' },
-      }),
+  it('renders the works catalog at the root URL', async () => {
+    vi.stubGlobal(
+      'fetch',
+      vi.fn().mockResolvedValue(
+        new Response(JSON.stringify([]), {
+          status: 200,
+          headers: { 'Content-Type': 'application/json' },
+        }),
+      ),
     );
-    vi.stubGlobal('fetch', fetchMock);
 
-    render(<App />);
+    renderAt('/');
 
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(/welcome/i);
-    expect(screen.getByRole('status')).toHaveTextContent('Connecting to the API…');
-    expect(await screen.findByText('Connected to api v1.2.3')).toBeInTheDocument();
-    expect(fetchMock).toHaveBeenCalledWith('/api/version', expect.anything());
+    expect(screen.getByRole('link', { name: 'BookCast' })).toHaveAttribute('href', '/');
+    expect(await screen.findByText('No works in the catalog yet.')).toBeInTheDocument();
   });
 
-  it('shows an error message when the API cannot be reached', async () => {
-    vi.stubGlobal('fetch', vi.fn().mockRejectedValue(new TypeError('Failed to fetch')));
+  it('renders the not-found page with a link back to the catalog for unknown URLs', () => {
+    renderAt('/does-not-exist');
 
-    render(<App />);
-
-    expect(await screen.findByText('Cannot reach the API')).toBeInTheDocument();
-    expect(screen.getByRole('status')).toHaveTextContent('Failed to fetch');
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Page not found');
+    expect(screen.getByRole('link', { name: 'Back to the catalog' })).toHaveAttribute('href', '/');
   });
 });
