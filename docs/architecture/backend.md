@@ -19,10 +19,14 @@ apps/api/
     lib/
       errors.ts             ApiError, codes, error middleware, not-found handler
       auth.ts               scrypt hashing, session create/find/delete, requireCurator
+      env.ts                loads the repository root .env, reads DATABASE_URL
       slug.ts               slug generation and uniqueness
       ids.ts                nanoid id generator
+      isbn.ts               ISBN check digit and normalization
+      password.ts           scrypt password hashing
     scripts/
       seed.ts               npm run db:seed
+      seed-data.ts          Zod schema and cross-reference checks for data/seed.json
 ```
 
 - **Layers:** route → service → Drizzle queries. A route handles HTTP, parses its input with a Zod schema in `apps/api` and calls queries or the service. A service exists only for logic that spans several rows (today: creating an edition). There is no repository layer.
@@ -30,7 +34,7 @@ apps/api/
 - Node.js runs the `.ts` files directly in development (`node --watch src/server.ts`); `npm run build` compiles to `dist/`. Relative imports therefore include the `.ts` extension, and only erasable TypeScript syntax is allowed: no `enum`, no `namespace`, no constructor parameter properties.
 - Production (`npm start` runs `dist/server.js`) also serves the built frontend from `apps/web/dist`. The port comes from `PORT`, then `API_PORT`, then 3001.
 - Migrations run with `npm run db:migrate` (drizzle-kit) on purpose, never on server start: the free Render service restarts and sleeps often.
-- `npm run db:seed` runs `src/scripts/seed.ts`, which calls `services/create-edition.ts` — not a second implementation.
+- `npm run db:seed` runs `src/scripts/seed.ts`: it validates `data/seed.json`, replaces the catalog tables in one transaction and upserts the curator. It does not go through `services/create-edition.ts` yet, because that service does not exist; when it lands, the seed should reuse it instead of inserting directly.
 
 ## Rules
 

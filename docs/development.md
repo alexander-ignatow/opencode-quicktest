@@ -58,6 +58,19 @@ npm install <package> -w apps/web
 npm install -D <package> -w apps/api
 ```
 
+## Database
+
+The API reads the connection string from `DATABASE_URL` in the repository root `.env` (copy `.env.example` and fill it in). `.env` is never committed.
+
+```bash
+npm run db:migrate   # create or update the tables
+npm run db:seed      # load data/seed.json
+```
+
+`npm run db:seed` is safe to run again: it replaces the catalog tables (genres, credit roles, people, works, editions and their links) with the sample data, and keeps users and sessions. It creates or updates the curator account from `CURATOR_EMAIL` and `CURATOR_PASSWORD`; when those are missing it skips the account with a warning. Run `npm run db:migrate` first on a new database.
+
+After changing `apps/api/src/db/schema/`, run `npm run db:generate` and review the generated SQL in `apps/api/drizzle/` before committing it.
+
 ## Run the application
 
 ```bash
@@ -107,6 +120,9 @@ Run from the repository root.
 | `npm run test` | Run Vitest unit tests in both apps |
 | `npm run test:e2e` | Run Playwright end-to-end tests |
 | `npm run test:e2e:install` | Download the Chromium browser for Playwright (once) |
+| `npm run db:generate` | Generate a SQL migration from the Drizzle schema |
+| `npm run db:migrate` | Apply pending migrations to the database in `DATABASE_URL` |
+| `npm run db:seed` | Replace the catalog with the sample data from `data/seed.json` |
 | `npm run verify` | lint + typecheck + test + build |
 
 Per app: add `-w apps/web` or `-w apps/api`, for example `npm run test -w apps/api`.

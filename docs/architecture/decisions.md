@@ -13,6 +13,13 @@ Template:
 - **Consequences:** What becomes easier or harder?
 ```
 
+### 2026-11-25 — `db:seed` replaces the catalog; env comes from the root `.env`
+
+- **Context:** The project had no database layer, while requirements §6 expects `npm run db:seed` to load `data/seed.json` and the documented stack is Drizzle on PostgreSQL. The seed needed a repeat-run rule, a way to find `DATABASE_URL`, and behaviour when curator credentials are absent.
+- **Decision:** Add the Drizzle schema, generated migration `apps/api/drizzle/0000_*.sql` and the scripts `db:generate`, `db:migrate`, `db:seed`. `db:seed` validates the file with Zod and cross-reference checks, then in one transaction deletes and reinserts genres, credit roles, people, works, editions, Contents and credits, keeping users and sessions. It upserts the curator from `CURATOR_EMAIL` / `CURATOR_PASSWORD`; when they are missing it warns and skips the account. Both the app and `drizzle.config.ts` load the repository root `.env` with `process.loadEnvFile`; variables already set in the environment win. Ids and slugs are generated in the seed; editions with equal titles get `-2`, `-3` … and `new` is reserved.
+- **Alternatives:** Match existing rows by name or title — contradicts the no-natural-keys decision; refuse to run when the catalog is not empty — a second run then fails instead of restoring the sample data; add `dotenv` — `node:process` already loads `.env`; require curator credentials — a developer without them could not seed the catalog.
+- **Consequences:** Running the seed destroys curator-created catalog rows in the target database, so it must point at the `demo` branch during development. The seed inserts directly rather than through `services/create-edition.ts`; the service does not exist yet and the seed should reuse it once it does. `docs/development.md` documents the commands.
+
 ### 2026-11-23 — Duplicate edition comparison: trimmed, case-sensitive
 
 - **Context:** `requirements.md` §5 rejects an edition with the same title, publisher and year with `409` and a link, but does not define "same"; `data-model.md` had added an unrequested case-insensitive rule.
