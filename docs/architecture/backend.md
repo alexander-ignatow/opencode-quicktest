@@ -56,7 +56,7 @@ apps/api/
 - `code` is stable and for the client to branch on: `VALIDATION_FAILED`, `UNAUTHENTICATED`, `NOT_FOUND`, `EDITION_EXISTS`, `INTERNAL`.
 - `fields` maps a path inside the request body to a message — top-level (`title`), nested (`contents[0].authors[1]`), or a list (`contents`). The form places these next to the right input.
 - `details` carries extra data when the client needs it: `{ "editionSlug": "solaris" }` for `EDITION_EXISTS`.
-- Statuses: `400` invalid input and duplicate credit, `401` missing or expired session (and missing role), `404` unknown slug or unknown `/api` route, `409` duplicate edition, `500` anything unexpected.
+- Statuses: `400` invalid input and duplicate credit, `401` missing or expired session (and missing role), `404` unknown slug or unknown `/api` route, `409` duplicate edition, `500` anything unexpected. A malformed JSON body is invalid input: `400 VALIDATION_FAILED` with "Invalid JSON body".
 
 **Query parameters** are optional and validated: `GET /api/people?q=lem&limit=10` and `GET /api/works?q=solar&limit=10` (`limit` defaults to 10, maximum 20).
 
@@ -65,7 +65,7 @@ apps/api/
 | Method | Path | Auth | Description | Response |
 | --- | --- | --- | --- | --- |
 | GET | `/api/version` | guest | API name and version | `200 { name, version }` |
-| GET | `/api/works` | guest | catalog rows, ordered by `lower(title) COLLATE "C", slug` | `200 [{ slug, title, year, authors[], genres[], editionCount }]` |
+| GET | `/api/works` | guest | catalog rows, ordered by `lower(title) COLLATE "C", slug COLLATE "C"` | `200 [{ slug, title, year, authors[], genres[], editionCount }]` |
 | GET | `/api/works/:slug` | guest | work with authors, genres and the editions containing it | `200 { slug, title, year, originalLanguage, authors[], genres[], editions[] }` plus optional `originalTitle`, `synopsis` |
 | GET | `/api/editions/:slug` | guest | edition with Contents and Cast | `200 { slug, title, year, language, contents[], cast[] }` plus optional `publisher`, `isbn` |
 | GET | `/api/people/:slug` | guest | person with their filmography | `200 { slug, name, works[], editions[] }` plus optional `born`, `died`, `bio`, `photoUrl` |
@@ -79,6 +79,8 @@ apps/api/
 | GET | `/api/auth/me` | guest | current user; `401` means guest, not a retryable error | `200 { email, roles }` · `401` |
 
 Absent optional fields are omitted from responses; empty login fields fail client validation before a request is sent. The web app redirects a guest to `/login?next=/editions/new` and uses `next` after a successful login.
+
+`GET /api/works?q=` (autocomplete) is part of Story 6 and is not implemented yet; until then `GET /api/works` ignores query parameters.
 
 ## Payload and response shapes (illustrative)
 
