@@ -13,6 +13,13 @@ Template:
 - **Consequences:** What becomes easier or harder?
 ```
 
+### 2026-11-25 — Work page: edition order, cover URL and error codes
+
+- **Context:** Story 2 needs a deterministic order for a work's editions, a cover built from the ISBN, and a page that shows "Work not found" for an unknown slug but an error with Retry for any other failure. `useResource` only exposed a message, so a page could not tell the two apart. The documented `GET /api/works/:slug` shape also lacked `publisher` and `isbn`, which the page needs for the publisher text and the cover.
+- **Decision:** The work's `editions[]` is ordered by the API: `ORDER BY year ASC, title COLLATE "C", publisher COLLATE "C" NULLS LAST` — case-sensitive character-code order, missing publisher last. The cover is `<img src="https://covers.openlibrary.org/b/isbn/{isbn}-M.jpg?default=false">`; a missing ISBN or an image `error` swaps to an initials placeholder block. `useResource`'s error state carries `code` (`ApiErrorCode | 'UNKNOWN'`), so a page renders a not-found view for `NOT_FOUND` without Retry. `backend.md` now documents `publisher` and `isbn` in `editions[]` and the ordering rule. Languages are still displayed as raw two-letter codes; a language dictionary stays out of the MVP.
+- **Alternatives:** Sorting in the page — duplicates the rule in the tests and differs from the catalog decision; omitting `?default=false` — Open Library returns a blank image for a missing cover, so no `error` event fires; a separate fetch path for 404 in the page — a second data-loading mechanism beside `useResource`.
+- **Consequences:** One order tested in both the API unit test and the E2E oracle. The placeholder is a CSS block, so requirements §7's "placeholder image or generated block" remains open. The hook change is additive and leaves the catalog page untouched.
+
 ### 2026-11-25 — Verification fixes: order oracle, JSON 400, final error middleware
 
 - **Context:** Reviewing Story 1 found that the catalog order was only checked against the API’s own output, a malformed JSON body became `500`, authors were selected by role level, and the error middleware ran before the static frontend middleware, so static failures bypassed it.
