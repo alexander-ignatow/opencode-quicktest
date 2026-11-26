@@ -10,15 +10,24 @@
 
 Small steps + a check after each step = a reliable result. This matters even more with free models.
 
-## 6.2 Start with the seed
+## 6.2 First: the data model in code and the seed
 
-Your first "story" is technical: load `data/seed.json` the way you decided in Step 3. Every next story then has real data to show.
+Your first "story" is technical, and it is the riskiest one: it turns `docs/architecture/data-model.md` into real code — the database schema, the first migration and the seed script that loads `data/seed.json`. Do it right after Step 5, before any user story, and give it time: setup problems (database connection, migrations, `.env`) all show up here. Every next story then has a real schema and real data, and goes much smoother.
 
 ```text
-/plan-feature Load data/seed.json into the app as decided in docs/architecture/ (seeding).
+/plan-feature Implement the data model from docs/architecture/data-model.md as the database schema
+and the first migration, and a seed script that loads data/seed.json, as decided in
+docs/architecture/decisions.md (storage, seeding). Add npm scripts for generating and applying
+migrations and for seeding. No API endpoints and no UI yet.
 ```
 
-Done when: after a fresh start (or `npm run db:seed`) the data is there, and running the seed twice creates no duplicates.
+**Expected agent behavior:** the plan lists the schema files, the migration, the seed script and the npm scripts, and maps every part of `seed.json` to tables. If the mapping does not fit, the data model or the seed is wrong — fix the docs with the architect first.
+
+Done when:
+
+- the schema matches `docs/architecture/data-model.md`, and the migration is committed;
+- `npm run db:seed` (or the name you chose) fills the database, and running it twice creates no duplicates;
+- there is a test for the seed logic (for example, how one record of `seed.json` becomes rows).
 
 ## 6.3 The loop
 
@@ -124,11 +133,11 @@ git pull
 
 ## ✅ Result
 
-- [ ] The seed loads `data/seed.json`; running it twice creates no duplicates.
+- [ ] The schema and migrations match the data model; the seed loads `data/seed.json`, and running it twice creates no duplicates.
 - [ ] All MVP user stories work in the browser, including error and empty states.
 - [ ] `npm run verify` and `npm run test:e2e` pass.
 - [ ] At least one Playwright test covers the main user flow.
 - [ ] `docs/architecture/` is up to date: API endpoints, data model, new decisions.
 - [ ] Work is merged into `main` in small, meaningful commits.
 
-Next: [Step 7. Add a feature](07-add-a-feature.md)
+Next: [Step 7. Add a feature](07-add-a-feature.md) (optional)

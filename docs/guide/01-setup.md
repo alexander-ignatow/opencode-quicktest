@@ -85,7 +85,9 @@ Then inside OpenCode:
 Good to know:
 
 - Free models change often. If one disappears or stops working, pick another one.
-- Free models have limits. If you hit one, wait or switch the model.
+- Free models have limits — and they are small. In our test a free model ran out after **5–7 prompts**, not enough for one user story. If you hit a limit, wait or switch the model, and spread the work over several days.
+- The limit may be shared between free models (per account or network), so switching does not always help.
+- Free is enough to **learn the process**. For regular, serious work, plan for a paid plan or your own API key — everything this guide teaches about small steps and short context saves money there too.
 - Free model providers may store your prompts. **Never paste passwords, API keys or personal data into the chat.**
 
 ## 1.7 Meet the AI setup

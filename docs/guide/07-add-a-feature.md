@@ -1,6 +1,6 @@
-# Step 7. Add a feature
+# Step 7. Add a feature (optional)
 
-**Goal:** add one substantial feature to a working app without breaking it. This is what real development looks like: most of the time you change an existing system.
+**Goal:** add one substantial feature to a working app without breaking it. This is what real development looks like: most of the time you change an existing system. Optional, but it is where you learn to change working code without breaking it.
 
 ## 7.1 Pick the feature
 

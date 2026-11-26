@@ -100,4 +100,4 @@ git commit -m "Architecture: architect agent and docs/architecture/"
 - [ ] The review found no open problems you have not decided on.
 - [ ] Committed.
 
-Next: [Step 6. Build the MVP](06-build-the-mvp.md)
+Next: [Step 6. Build the MVP](06-build-the-mvp.md) — it starts with the data model in code and the seed.

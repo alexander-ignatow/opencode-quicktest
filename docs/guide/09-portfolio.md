@@ -29,11 +29,12 @@ Take a screenshot of the main screen, save it as `docs/screenshot.png`, and chec
 
 ## 9.3 Remove this guide
 
-The guide was for building. It does not belong in your finished project.
+The guide and the webinar notes were for building. They do not belong in your finished project.
 
 ```text
-Delete the docs/guide folder and remove every link to it from the repository.
-Then search the repository for "docs/guide" and show me that nothing is left. Do not change anything else.
+Delete the docs/guide and docs/demo folders and remove every link to them from the repository.
+Then search the repository for "docs/guide" and "docs/demo" and show me that nothing is left.
+Do not change anything else.
 ```
 
 **Expected agent behavior:** it deletes the folder, fixes links (README, other docs) and proves with a search that no references remain.
@@ -73,7 +74,7 @@ git push
 ## ✅ Result
 
 - [ ] The README describes your app, with a screenshot (and a live link, if deployed).
-- [ ] `docs/guide` is gone, no broken links.
+- [ ] `docs/guide` and `docs/demo` are gone, no broken links.
 - [ ] The repository is public, named after your app, with description and topics.
 
 Done. You have a full-stack app and a repository that shows how you work with AI. 🎉
